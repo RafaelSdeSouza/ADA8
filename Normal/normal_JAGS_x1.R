@@ -5,7 +5,8 @@
 # 1 response (y) and 1 explanatory variable (x1)
 
 require(R2jags)
-require(mcmcplots)
+require(mcmcplots)#install.packages("plot3D",dependencies = T)
+
 set.seed(1056)                 # set seed to replicate example
 nobs= 500                      # number of obs in model 
 x1 <- runif(nobs)               # random uniform variable
@@ -63,7 +64,7 @@ jagsfit <- jags(
 print(jagsfit,justify = "left", digits=2)
 
 
-mcmcplot(jagsfit)
+traplot(jagsfit,c("beta", "sigma"))
 
 
 
