@@ -4,6 +4,8 @@
 # Chapter 4 - Normal linear model in R using JAGS
 # 1 response (y) and 2 explanatory variables (x1,x2)
 
+#install.packages("plot3D",dependencies = T) #To  run  if not installed 
+require("plot3D")
 
 set.seed(1056)                 # set seed to replicate example
 nobs= 150                      # number of obs in model 
@@ -31,9 +33,6 @@ y.pred <- matrix(predict(fit, newdata = x1x2),
 fitpoints <- predict(fit)
 
 # scatter plot with regression plane
-library("plot3D")
-
-par(las=2)
 scatter3D(x1, x2, y, pch = 19, cex = 0.5, cex.lab=1.5,
           theta = 130, phi = 25, ticktype = "detailed",col="red2",bty = "b2",t="l",
           xlab="x1",
