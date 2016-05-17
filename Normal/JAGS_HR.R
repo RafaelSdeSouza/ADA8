@@ -42,7 +42,7 @@ NORM_errors<-"model{
 
 # Diffuse normal priors for predictors
 for (i in 1:K) { 
-beta[i] ~ dnorm(0, 1e-3) 
+beta[i] ~ dnorm(0, 1e-1) 
 }
 
 # Gamma prior for standard deviation
@@ -86,15 +86,15 @@ jagsfit0 <- jags(
   parameters = params0,
   model      = textConnection(NORM_errors),
   n.chains   = 4,
-  n.iter     = 15000,
+  n.iter     = 50000,
   n.thin     = 1,
-  n.burnin   = 5000)
+  n.burnin   = 10000)
 
 jagsresults(x=jagsfit0 , params=c("beta", "sigma"),signif=2)
 
+
+
 yx <- jagsresults(x=jagsfit0, params=c('Yx'))
-
-
 gdata <- data.frame(x =xx, mean = yx[,"50%"],lwr1=yx[,"25%"],lwr2=yx[,"2.5%"],upr1=yx[,"75%"],upr2=yx[,"97.5%"])
 nmod <- data.frame(obsx1,obsy)
 
