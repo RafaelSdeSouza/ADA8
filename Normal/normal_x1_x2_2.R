@@ -6,7 +6,7 @@
 
 #install.packages("plot3D",dependencies = T) #To  run  if not installed 
 require("plot3D")
-
+source("https://raw.githubusercontent.com/johnbaums/jagstools/master/R/jagsresults.R")
 
 
 set.seed(1056)                 # set seed to replicate example
