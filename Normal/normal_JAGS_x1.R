@@ -67,5 +67,9 @@ print(jagsfit,justify = "left", digits=2)
 traplot(jagsfit,c("beta", "sigma"))
 
 
+denplot(jagsfit,c("beta", "sigma"))
+
+caterplot(jagsfit,c("beta", "sigma"))
 
 
+mcmcplot(jagsfit,c("beta", "sigma"))
