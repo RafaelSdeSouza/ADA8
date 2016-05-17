@@ -10,14 +10,17 @@ require(mcmcplots)#install.packages("plot3D",dependencies = T)
 set.seed(1056)                 # set seed to replicate example
 nobs= 500                      # number of obs in model 
 x1 <- runif(nobs)               # random uniform variable
-xb <- 2 + 3*x1                  # linear predictor, xb
-y <- rnorm(nobs, xb, sd=1)      # create y as adjusted random normal variate
+x2 <- runif(nobs)               # random uniform variable
+x3 <- runif(nobs)               # random uniform variable
+x4 <- runif(nobs)  
+xb <- 2 + 3*x1+4*x2-1*x3+0.75*x4                  # linear predictor, xb
+y <- rnorm(nobs, xb, sd=1.5)      # create y as adjusted random normal variate
 
 # Frequentist
 lm(y~x1)
 
 
-X <- model.matrix(~ 1 + x1)
+X <- model.matrix(~ 1 + x1+x2+x3+x4)
 K <- ncol(X)
 jags_data <- list(Y = y,
                  X  = X,
@@ -72,4 +75,3 @@ denplot(jagsfit,c("beta", "sigma"))
 caterplot(jagsfit,c("beta", "sigma"))
 
 
-mcmcplot(jagsfit,c("beta", "sigma"))
