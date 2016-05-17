@@ -19,7 +19,7 @@ y <- rnorm(nobs, xb, sd=0.5)      # create y as adjusted random normal variate
 
 
 
-# Compute the linear regression (z = ax + by + d)
+# Compute the linear regression 
 fit <- lm(y~x1+x2+I(x1^2)+I(x2^2)) 
 summary(fit)
 
