@@ -47,7 +47,7 @@ These can be done in 2 ways:
 
 * Alternatively, you can simply type in the Rstudio console window
     ```R
-    -pac <-c("R2jags","MASS","scales","mcmcplots","ggplot2","plot3D");
+    pac <-c("R2jags","MASS","scales","mcmcplots","ggplot2","plot3D");
     install.packages(pac,dependencies=T)
     ```
 
