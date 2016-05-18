@@ -4,7 +4,7 @@
 
 The tutorial is composed of theoretical and practical modules. 
 
-The examples will be demonstrated in R but familiarity with the language is not a requirement.
+The examples will be demonstrated in R but _familiarity with the language is not a requirement_.
 
 People not familiar to R can follow all examples and discussions.
 
