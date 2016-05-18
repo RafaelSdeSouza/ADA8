@@ -1,6 +1,5 @@
-Tutorial on Bayesian Modeling
-=============================
-[ADA8 Summer School](http://ada8.cosmostat.org) - May 23rd, Chania - Greece
+# Tutorial on Bayesian Modeling #
+## [ADA8 Summer School](http://ada8.cosmostat.org) - May 23rd, Chania - Greece ##
 
 
 The tutorial is composed of theoretical and practical modules. 
