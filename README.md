@@ -2,6 +2,8 @@
 ## [ADA8 Summer School](http://ada8.cosmostat.org) - May 23rd, Chania - Greece ##
 
 
+### Getting Started ###
+
 The tutorial is composed of theoretical and practical modules. 
 
 The examples will be demonstrated in R but _familiarity with the language is not a requirement_.
