@@ -1,26 +1,26 @@
-# From Bayesian Models for Astrophysical Data 
+# ADA8 – Astronomical Data Analysis Summer School
+# Bayesian tutorial by Rafael S. de Souza - ELTE, Hungary & COIN
+#
+# Partial example from Bayesian Models for Astrophysical Data 
 # by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
+#
+# Example of frequentist linear regression in R
+# synthetic data
+# 1 response (y) and 2 explanatory variables (x1,x2) with 2 quadratic terms
 
-# Chapter 4 - Normal linear model in R using JAGS
-# 1 response (y) and 2 explanatory variables (x1,x2)
+#install.packages("plot3D",dependencies = T)      # Run this if plot3D not previously installed
 
-#install.packages("plot3D",dependencies = T) #To  run  if not installed 
 require("plot3D")
 
-
-
-set.seed(1056)                 # set seed to replicate example
-nobs= 150                      # number of obs in model 
-x1 <- runif(nobs,0,2)               # random uniform variable
+set.seed(1056)                                    # set seed to replicate example
+nobs= 150                                         # number of obs in model 
+x1 <- runif(nobs,0,2)                             # random uniform variable
 x2 <- runif(nobs,0,2) 
 xb <- 2 + 3*x1-4.5*x1^2 +1.5*x2+1.5*x2^2          # linear predictor, xb
-y <- rnorm(nobs, xb, sd=0.5)      # create y as adjusted random normal variate
+y <- rnorm(nobs, xb, sd=0.5)                      # create y as adjusted random normal variate
 
 
-
-
-# Compute the linear regression 
-fit <- lm(y~x1+x2+I(x1^2)+I(x2^2)) 
+fit <- lm(y~x1+x2+I(x1^2)+I(x2^2))                # Compute the linear regression 
 summary(fit)
 
 # predict values on regular xy grid
@@ -31,6 +31,8 @@ x1x2 <- expand.grid( x1 = x1.pred, x2 = x2.pred)
 
 y.pred <- matrix(predict(fit, newdata = x1x2), 
                  nrow = grid.lines, ncol = grid.lines)
+
+
 # fitted points for droplines to surface
 fitpoints <- predict(fit)
 

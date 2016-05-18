@@ -1,7 +1,10 @@
-# From Bayesian Models for Astrophysical Data 
+# ADA8 – Astronomical Data Analysis Summer School
+# Bayesian tutorial by Rafael S. de Souza - ELTE, Hungary & COIN
+#
+# Partial example from Bayesian Models for Astrophysical Data 
 # by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
-
-# Chapter 4 - Normal linear model in R using JAGS
+#
+# Example of frequentist linear regression in R
 # syntetic data
 # 1 response (y) and 2 explanatory variables (x1,x2)
 
@@ -13,7 +16,7 @@ set.seed(1056)                 # set seed to replicate example
 nobs= 150                      # number of obs in model 
 x1 <- runif(nobs,0,2)          # random uniform variable 1
 x2 <- runif(nobs,0,2)          # random uniform variable 2
-xb <- 2 + 3*x1 -1.5*x2         # linear predictor, xb
+xb <- 2 + 3 * x1 - 1.5*x2      # linear predictor, xb
 y <- rnorm(nobs, xb, sd=1)     # create y as adjusted random normal variate
 
 
