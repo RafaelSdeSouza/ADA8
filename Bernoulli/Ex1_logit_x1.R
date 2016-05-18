@@ -7,13 +7,14 @@
 # Example of frequentist linear regression in R
 # 1 response (y) and 1 explanatory variable (x1)
 require(R2jags)
-
+require(ggplot2)
+source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
 
 
 set.seed(1056)                   # set seed to replicate example
 nobs= 1000                        # number of obs in model 
 x1 <- runif(nobs,0,3)                # random uniform variable
-eta <- -6 + 2.5*x1                # linear predictor, eta
+eta <- -6 + 3.5*x1                # linear predictor, eta
 p <- 1/(1+exp(-eta))            # inverse-logit
 by <- rbinom(nobs,size=1, prob = p) # create y as adjusted random bernoulli variate
 logitmod <-data.frame(by, x1)
@@ -27,7 +28,7 @@ xx = seq(from =  min(x1),
 
 
 ############### Construct data dictionary
-X <- model.matrix(~ x1, 
+X <- model.matrix(~ 1+x1, 
                   data = logitmod)
 K <- ncol(X)
 logit_data <- list(Y  = logitmod$by, # Response variable
@@ -40,8 +41,9 @@ logit_data <- list(Y  = logitmod$by, # Response variable
 ############### JAGS code
 LOGIT<-"model{
 
+
 # Diffuse normal priors for predictors
-for(i in k){beta[i]~dnorm(0,1e-3)}
+for (i in 1:K) { beta[i] ~ dnorm(0, 0.0001) }
 
 
 # Likelihood function 
@@ -49,7 +51,7 @@ for(i in k){beta[i]~dnorm(0,1e-3)}
 for (i in 1:N){  
 Y[i] ~ dbern(p[i])
 logit(p[i]) <- eta[i]
-eta[i]      <- inprod(beta[], X[i,])
+eta[i]  <- beta[1]+beta[2]*X[i,2]
 }
 # Prediction for new data
 for (j in 1:M){
@@ -87,8 +89,8 @@ y <- jagsresults(x=jagsfit, params=c('px'))
 x <- xx
 gdata <- data.frame(x =xx, mean = y[,"mean"],lwr1=y[,"25%"],lwr2=y[,"2.5%"],upr1=y[,"75%"],upr2=y[,"97.5%"])
 # Bin data for visualization
-binx<-0.05
-t.breaks <-cut(x1, seq(0,1, by=binx))
+binx<-0.25
+t.breaks <-cut(x1, seq(0,3, by=binx))
 means <-tapply(by, t.breaks, mean)
 semean <-function(x) sd(x)/sqrt(length(x))
 means.se <-tapply(by, t.breaks, semean)
@@ -99,23 +101,15 @@ means.se <-tapply(by, t.breaks, semean)
 
 
 
-gbin<-data.frame(x=seq(binx,1, by=binx),y=means)
+gbin<-data.frame(x=seq(binx,3, by=binx),y=means)
 
-ggplot(logitmod,aes(x=x1,y=by))+ geom_point(colour="#de2d26",size=1,alpha=0.35,position = position_jitter (h = 0.075))+
-  geom_point(aes(x=x,y=y),size=2.5,data=gbin,colour="gray70")+
+ggplot(logitmod,aes(x=x1,y=by))+ geom_point(colour="red2",size=1,alpha=0.85,position = position_jitter (h = 0.075))+
+  geom_point(aes(x=x,y=y),size=2.5,data=gbin,colour="red")+
   geom_errorbar(data=gbin,aes(x=x,y=y,ymin=y-2*means.se,ymax=y+2*means.se),alpha=0.85,
                 colour="gray70",width=0.005)+
   geom_ribbon(data=gdata,aes(x=xx,ymin=lwr1, ymax=upr1,y=NULL), alpha=0.45, fill=c("#00526D"),show.legend=FALSE) +
   geom_ribbon(data=gdata,aes(x=xx,ymin=lwr2, ymax=upr2,y=NULL), alpha=0.35, fill = c("#00A3DB"),show.legend=FALSE) +
   geom_line(data=gdata,aes(x=xx,y=mean),colour="gray25",linetype="dashed",size=1,show.legend=FALSE)+
-  scale_colour_tableau(name="")+
-  theme_bw() +
-  ylab("y")+
-  xlab("x")+
-  theme(legend.background = element_rect(fill="white"),
-        legend.key = element_rect(fill = "white",color = "white"),
-        plot.background = element_rect(fill = "white"),
-        legend.position="top",
-        axis.title.y = element_text(vjust = 0.1,margin=margin(0,10,0,0)),
-        axis.title.x = element_text(vjust = -0.25),
-        text = element_text(size = 25,family="serif"))
+  theme_bw() 
+
+  
