@@ -10,8 +10,7 @@ Each folder holds scripts for a different probability distribution, references a
 
 Most of the material presented here will be presented with deeper discussions and further examples in our book to be released in late 2016:
 
-_Bayesian Models for Astrophysical Data:_  
-_using R/JAGS and Python/Stan_  
+_Bayesian Models for Astrophysical Data: using R/JAGS and Python/Stan_  
 Hilbe, de Souza and Ishida, _in prep_, Cambridge University Press  
 
 
