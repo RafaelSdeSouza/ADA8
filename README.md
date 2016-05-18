@@ -24,9 +24,11 @@ These can be done in 2 ways:
 
     A window will pop-up where you can select:
 
-    Choose from: 	 Repository (CRAN)
+    Choose from:  
+        Repository (CRAN)
 
-        Packages (separate multiple with space or comma):
+    Packages (separate multiple with space or comma):
+
         R2jags, MASS, Scales, mcmcplots, ggplot2, plot3D 
 
 * Alternatively, you can simply type in the Rstudio console window
