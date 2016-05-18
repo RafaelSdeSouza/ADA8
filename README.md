@@ -5,7 +5,7 @@ Tutorial presented during the 8th Astronomical Data Analysis Summer School.
 
 This repository holds  the scripts used to illustrate the theoretical concepts of Bayesian Modeling using synthetic and real data.
 
-If you use any of resources presented here, please include the appropriate citation. 
+If you use any of the resources presented here, please include the appropriate citation. 
 Each folder holds scripts for a different probability distribution, references and the corresponding bibtex entry. 
 
 Most of the material presented here will be presented with deeper discussions and further examples in our book to be released in late 2016:
@@ -57,8 +57,8 @@ This should be enough to get you ready for the exercises we will be working on.
 
 **_Rafael da Silva de Souza_**
 
-[Researcher, ELTE - Hungary](http://rafael2706.wix.com/rafaelsdesouza)
-[Head and founder, the Cosmostatistics Initiative (COIN)](https://asaip.psu.edu/organizations/iaa/iaa-working-group-of-cosmostatistics)
-[Vice-president for development, International Astrostatistics Association (IAA)](http://iaa.mi.oa-brera.inaf.it/adm_program/modules/announcements/announcements.php)
+[Researcher, ELTE - Hungary](http://rafael2706.wix.com/rafaelsdesouza)  
+[Head and founder, the Cosmostatistics Initiative (COIN)](https://asaip.psu.edu/organizations/iaa/iaa-working-group-of-cosmostatistics)  
+[Vice-president for development, International Astrostatistics Association (IAA)](http://iaa.mi.oa-brera.inaf.it/adm_program/modules/announcements/announcements.php)  
 
 
