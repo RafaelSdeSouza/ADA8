@@ -58,7 +58,7 @@ This should be enough to get you ready for the exercises we will be working on.
 **_Rafael da Silva de Souza_**
 
 [Researcher, ELTE - Hungary](http://rafael2706.wix.com/rafaelsdesouza)  
-[Head and founder, the Cosmostatistics Initiative (COIN)](https://asaip.psu.edu/organizations/iaa/iaa-working-group-of-cosmostatistics)  
-[Vice-president for development, International Astrostatistics Association (IAA)](http://iaa.mi.oa-brera.inaf.it/adm_program/modules/announcements/announcements.php)  
+[Head and founder - The COsmostatistics INitiative (COIN)](https://asaip.psu.edu/organizations/iaa/iaa-working-group-of-cosmostatistics)  
+[Vice-president for development - The International Astrostatistics Association (IAA)](http://iaa.mi.oa-brera.inaf.it/adm_program/modules/announcements/announcements.php)  
 
 
