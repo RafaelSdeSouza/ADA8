@@ -30,10 +30,10 @@ These can be done in 2 ways:
         R2jags, MASS, Scales, mcmcplots, ggplot2, plot3D 
 
 * Alternatively, you can simply type in the Rstudio console window
-```R
+    ```R
     -pac <-c("R2jags","MASS","scales","mcmcplots","ggplot2","plot3D");
     install.packages(pac,dependencies=T)
-```
+    ```
 
 This should be enough to get you ready for the exercises we will be working on. 
 
