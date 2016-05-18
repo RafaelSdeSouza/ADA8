@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ada8 by RafaelSdeSouza</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Ada8</h1>
+        <p class="header">Tutorial of Bayesian Models</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/RafaelSdeSouza/ADA8/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/RafaelSdeSouza/ADA8/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/RafaelSdeSouza/ADA8">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/RafaelSdeSouza">RafaelSdeSouza</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a id="tutorial-on-bayesian-modeling" class="anchor" href="#tutorial-on-bayesian-modeling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tutorial on Bayesian Modeling</h1>
+
+<h2>
+<a id="ada8-summer-school---may-23rd-chania---greece" class="anchor" href="#ada8-summer-school---may-23rd-chania---greece" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://ada8.cosmostat.org">ADA8 Summer School</a> - May 23rd, Chania - Greece</h2>
+
+<p>Tutorial presented during the 8th Astronomical Data Analysis Summer School.</p>
+
+<p>This repository holds  the scripts used to illustrate the theoretical concepts of Bayesian Modeling using synthetic and real data.</p>
+
+<p>If use any of resources presented here, please include the appropriate citation. 
+Each folder holds scripts for a different probability distribution, references and the corresponding bibtex item. </p>
+
+<p>Most of the material presented here will be presented with deeper discussions and further examples in our book to be released in late 2016:</p>
+
+<p><em>Bayesian Models for Astrophysical Data: using R/JAGS and Python/Stan</em><br>
+Hilbe, de Souza and Ishida, <em>in prep</em>, Cambridge University Press  </p>
+
+<h3>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h3>
+
+<p>The tutorial is composed of theoretical and practical modules. </p>
+
+<p>The examples will be demonstrated in R but <em>familiarity with the language is not a requirement</em>.</p>
+
+<p>In order to optimize the time spent in the examples and practical applications, I advise the participants to get the following software up and running in advance.</p>
+
+<ul>
+<li>Jags      -   <a href="http://mcmc-jags.sourceforge.net">http://mcmc-jags.sourceforge.net</a>
+</li>
+<li>R         -   <a href="https://www.r-project.org">https://www.r-project.org</a>
+</li>
+<li>Rstudio   -   <a href="https://www.rstudio.com">https://www.rstudio.com</a>
+</li>
+</ul>
+
+<p>Once Rstudio is installed you will nedd few R packages. </p>
+
+<p>These can be done in 2 ways:</p>
+
+<ul>
+<li>
+<p>Using Rstudio toolbar:</p>
+
+<p>-Tools -&gt; Install packages</p>
+
+<p>A window will pop-up where you can select:</p>
+
+<p>Choose from:  </p>
+
+<pre><code>Repository (CRAN)
+</code></pre>
+
+<p>Packages (separate multiple with space or comma):</p>
+
+<pre><code>R2jags, MASS, Scales, mcmcplots, ggplot2, plot3D 
+</code></pre>
+</li>
+<li>
+<p>Alternatively, you can simply type in the Rstudio console window</p>
+
+<div class="highlight highlight-source-r"><pre><span class="pl-smi">pac</span> <span class="pl-k">&lt;-</span>c(<span class="pl-s"><span class="pl-pds">"</span>R2jags<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>MASS<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>scales<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>mcmcplots<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ggplot2<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>plot3D<span class="pl-pds">"</span></span>);
+install.packages(<span class="pl-smi">pac</span>,<span class="pl-v">dependencies</span><span class="pl-k">=</span><span class="pl-c1">T</span>)</pre></div>
+</li>
+</ul>
+
+<p>This should be enough to get you ready for the exercises we will be working on. </p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
