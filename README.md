@@ -25,6 +25,7 @@ These can be done in 2 ways:
     A window will pop-up where you can select:
 
     Choose from:  
+
         Repository (CRAN)
 
     Packages (separate multiple with space or comma):
