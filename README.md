@@ -55,6 +55,10 @@ This should be enough to get you ready for the exercises we will be working on.
 
 ### Chapter 1  - The Gaussian ###
 
+[Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Normal)
+
+
+
 ### Author ###
 
 **_Rafael da Silva de Souza_**
