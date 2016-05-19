@@ -1,7 +1,11 @@
-# From Bayesian Models for Astrophysical Data 
+# ADA8 – Astronomical Data Analysis Summer School
+# Bayesian tutorial by Rafael S. de Souza - ELTE, Hungary & COIN
+#
+# Partial example from Bayesian Models for Astrophysical Data 
 # by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
-
-# Chapter 4 - Normal linear model in R using JAGS
+#
+# Example of Bayesian normal linear regression in R using JAGS
+# synthetic data
 # 1 response (y) and 1 explanatory variable (x1)
 
 require(R2jags)
@@ -10,10 +14,10 @@ require(ggplot2)
 
 set.seed(1056)                 # set seed to replicate example
 nobs= 500                      # number of obs in model 
-x1 <- rnorm(nobs,5,2)               # random uniform variable
+x1 <- rnorm(nobs,5,2)          # random uniform variable
 
-xb <- 2 + 3*x1
-y <- rnorm(nobs, xb, sd=2)      # create y as adjusted random normal variate
+xb <- 2 + 3*x1                 # linear predictor
+y <- rnorm(nobs, xb, sd=2)     # create y as adjusted random normal variate
 
 
 # Prepare data for prediction 
@@ -23,18 +27,19 @@ xx = seq(from =  min(x1),
          length.out = M)
 
 
-
+# prepare data for JAGS input
 X <- model.matrix(~ 1 + x1)
 K <- ncol(X)
 
 jags_data <- list(Y = y,
-                 X  = X,
-                 K  = K,
-                 N  = nobs,
-                 M = M,
-                 xx= xx)
+                  X  = X,
+                  K  = K,
+                  N  = nobs,
+                  M = M,
+                  xx= xx)
     
 
+# JAGS model
 NORM <-" model{
     # Diffuse normal priors for predictors
     for (i in 1:K) { beta[i] ~ dnorm(0, 0.0001) }
@@ -55,17 +60,16 @@ NORM <-" model{
    etax[j]<-beta[1]+beta[2]*xx[j]
    mux[j]  <- etax[j]
    Yx[j]~dnorm(mux[j],tau)
-}
+    }
+}"
 
-    }"
-
-
+# set initial values
 inits <- function () {
   list(
     beta = rnorm(K, 0, 0.01))
-
 }
 
+# define parameters
 params <- c("beta", "sigma","Yx")
 
 jagsfit <- jags(
