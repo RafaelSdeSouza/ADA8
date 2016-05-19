@@ -14,6 +14,7 @@
         [1 explanatory variable with quadratic and cubic term](https://github.com/RafaelSdeSouza/ADA8/blob/master/Normal/normal_JAGS_x1_2_plot.R)
 
 * Astronomical application  
-        [Hubble residuals as a function of host galaxy mass](https://github.com/RafaelSdeSouza/ADA8/blob/master/Normal/JAGS_HR.R)  
-        Reproduces figure 12 of [Wolf et al., 2016](http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1602.02674)
+        [1 explanatory variable including measurement uncertainties](https://github.com/RafaelSdeSouza/ADA8/blob/master/Normal/JAGS_HR.R)  
+        _Hubble residuals as a function of host galaxy mass_  
+        Reproduces figure 12 of [Wolf et al., 2016](http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1602.02674)  
         Numerical results should be compared with those in the first line of Table 5. 
