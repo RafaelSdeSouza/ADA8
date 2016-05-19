@@ -84,8 +84,6 @@ jagsfit <- jags(
   n.thin     = 1,
   n.burnin   = 2500)
 
-
-# check results
 jagsresults(x=jagsfit, params=c("beta", "sigma"))
 
 
@@ -95,7 +93,6 @@ yx <- jagsresults(x=jagsfit, params=c('Yx'))
 
 normdata <- data.frame(x1,y)
 gdata <- data.frame(x =xx, mean = yx[,"mean"],lwr1=yx[,"25%"],lwr2=yx[,"2.5%"],upr1=yx[,"75%"],upr2=yx[,"97.5%"])
-
 
 ggplot(normdata,aes(x=x1,y=y))+ geom_point(colour="#de2d26",size=1,alpha=0.35)+
   geom_point(size=1.75,colour="green3")+
@@ -108,7 +105,6 @@ ggplot(normdata,aes(x=x1,y=y))+ geom_point(colour="#de2d26",size=1,alpha=0.35)+
 
 
 # Diagnostics plots
-
 # chains
 traplot(jagsfit,c("beta", "sigma"))
 

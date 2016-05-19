@@ -68,8 +68,6 @@ jagsfit <- jags(
            n.thin     = 1,
            n.burnin   = 2500)
 
-
-# print numerical results
 print(jagsfit,justify = "left", digits=2)
 
 # plot chains
