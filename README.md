@@ -57,13 +57,19 @@ This should be enough to get you ready for the exercises we will be working on.
 
 [Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Normal)
 
+### Chapter 2 - Count models ###
 
+[Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Count_models)
+
+### Chapter 3 - Binary models ###
+
+[Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Bernoulli)
 
 ### Author ###
 
-**_Rafael da Silva de Souza_**
+**_Rafael da Silva de Souza, PhD_**
 
-[Researcher, ELTE - Hungary](http://rafael2706.wix.com/rafaelsdesouza)  
+[Researcher - ELTE, Hungary](http://rafael2706.wix.com/rafaelsdesouza)  
 [Head and founder - The COsmostatistics INitiative (COIN)](https://asaip.psu.edu/organizations/iaa/iaa-working-group-of-cosmostatistics)  
 [Vice-president for development - The International Astrostatistics Association (IAA)](http://iaa.mi.oa-brera.inaf.it/adm_program/modules/announcements/announcements.php)  
 
