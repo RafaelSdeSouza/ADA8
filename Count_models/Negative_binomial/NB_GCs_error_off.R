@@ -10,13 +10,17 @@ require(jagstools)
 # Read data
 dat = read.csv(file="https://raw.githubusercontent.com/emilleishida/BMAD/master/data/NB_GCs/NB_GCs.csv",header=TRUE,dec=".")
 
-dat1<- dat[,c("N_GC","MV_T","Type")]
+
+dat1<- dat[,c("N_GC","MV","Type")]
 dat2 <- dat1[complete.cases(dat1),]
+dat3<-subset(dat2,Type=="E")
+
+write.csv(dat2,"GCs.csv",row.names=F)
 
 
-N = nrow(dat2)
-N_GC = dat2$N_GC
-MV_T = dat2$MV_T
+nobs = nrow(dat3)
+N_GC = dat3$N_GC
+MV_T = dat3$MV_T
 K = 2
 
 # Prepare data for prediction 
@@ -30,7 +34,7 @@ xx = seq(from = 1.05 * min(MV_T),
 jags_data <- list(
   Y = N_GC,
   X = MV_T,
-  N = N,
+  N = nobs,
   xx = xx,
   M = M, 
   K = K
@@ -106,7 +110,7 @@ require(scales)
 
 
 
-N_GCx <- jagsresults(x=jagsfit, params=c('N_GCx'))
+N_GCx <- jagsresults(x=jagsfit, params=c('Yx'))
 gdata <- data.frame(MV_Tx=xx, mean = N_GCx[,"50%"],lwr1=N_GCx[,"25%"],lwr2=N_GCx[,"2.5%"],upr1=N_GCx[,"75%"],upr2=N_GCx[,"97.5%"])
 
 asinh_trans <- function(){
@@ -119,14 +123,13 @@ asinh_trans <- function(){
 
 
 
-ggplot(dat2,aes(x=MV_T,y=N_GC))+
+ggplot(dat3,aes(x=MV_T,y=N_GC))+
   geom_ribbon(data=gdata,aes(x=MV_Tx,ymin=lwr1, ymax=upr1,y=NULL), alpha=0.45, fill=c("#67a9cf"),show.legend=FALSE) +
   geom_ribbon(data=gdata,aes(x=MV_Tx,ymin=lwr2, ymax=upr2,y=NULL), alpha=0.35, fill = c("#d1e5f0"),show.legend=FALSE) +
   geom_point(aes(colour=Type,shape=Type),size=2.25,alpha=0.85)+
   geom_line(data=gdata,aes(x=MV_Tx,y=mean),colour="gray25",linetype="dashed",size=1,show.legend=FALSE)+
   scale_y_continuous(trans = 'asinh',breaks=c(0,10,100,1000,10000,100000),
   labels=c("0",expression(10^1),expression(10^2),expression(10^3),expression(10^4),expression(10^5)))+
-  scale_colour_gdocs(name="")+
   scale_shape_manual(name="",values=c(19,2,8,10))+
   scale_x_reverse()+
   theme_bw() +

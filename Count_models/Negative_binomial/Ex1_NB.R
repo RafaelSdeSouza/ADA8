@@ -4,6 +4,9 @@
 # Partial example from Bayesian Models for Astrophysical Data 
 # by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
 #
+# See also R. S. de Souza, et al. MNRAS, 453, 1928-1940, 2015
+# doi:10.1093/mnras/stv1825
+#
 # Example of Bayesian negative binomial regression in R using JAGS
 # synthetic data
 # 1 response (y) and 1 explanatory variable (x1) 
@@ -11,6 +14,7 @@ set.seed(141)
 library(R2jags)
 library(MASS)
 library(scales)
+require(ggplot2)
 source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
 nobs <- 750
 x1 <- runif(nobs,0,4)
