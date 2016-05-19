@@ -1,5 +1,5 @@
 # Tutorial on Bayesian Modeling #
-## [ADA8 Summer School](http://ada8.cosmostat.org) - May 23rd, Chania - Greece ##
+## [ADA8 Summer School](http://ada8.cosmostat.org) - May 23rd, 2016, Chania - Greece ##
 
 Tutorial presented during the 8th Astronomical Data Analysis Summer School.
 
