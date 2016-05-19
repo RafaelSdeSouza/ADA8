@@ -38,8 +38,7 @@ NB.data <- list(
   K = K,
   N = nobs,
   M = M,
-  xx = xx,
-  N = nobs)
+  xx = xx)
 
 
 
@@ -66,10 +65,8 @@ cat(" model{
     mux[j] <- exp(etax[j])
     Yx[j] ~ dnegbin(px[j], theta)
    }
-
-
 }
-    ",fill = TRUE)
+  ",fill = TRUE)
 sink()
 
 
@@ -79,11 +76,20 @@ inits <- function () { list(
   theta = runif(0.00, 5) )
 }
 
+# define parameters
 params <- c("beta", "theta","Yx")
 
 
-# define parameters
 
+
+NB2 <- jags(data = NB.data, 
+            inits = inits,
+            parameters = params,
+            model = "NBGLM.txt",
+            n.thin = 1,
+            n.chains = 3,
+            n.burnin = 2500,
+            n.iter = 5000)
 
             
 # check results
