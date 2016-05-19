@@ -1,5 +1,5 @@
 # Tutorial on Bayesian Modeling #
-## [ADA8 Summer School](http://ada8.cosmostat.org) - May 23rd, 2016, Chania - Greece ##
+## [ADA8 Summer School](http://ada8.cosmostat.org) - May 23rd, 2016 - Chania, Greece ##
 
 Tutorial presented during the 8th Astronomical Data Analysis Summer School.
 
@@ -52,6 +52,8 @@ These can be done in 2 ways:
     ```
 
 This should be enough to get you ready for the exercises we will be working on. 
+
+### Chapter 1  - The Gaussian ###
 
 ### Author ###
 
