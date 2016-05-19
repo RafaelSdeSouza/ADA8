@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 set.seed(141)
 library(R2jags)
 library(MASS)
@@ -10,14 +11,41 @@ theta <- 0.75
 exb <- exp(xb)
 nby <- rnegbin(n = nobs, mu = exb, theta = theta)
 negbml <-data.frame(nby, x1)
+=======
+# ADA8 – Astronomical Data Analysis Summer School
+# Bayesian tutorial by Rafael S. de Souza - ELTE, Hungary & COIN
+#
+# Partial example from Bayesian Models for Astrophysical Data 
+# by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
+#
+# Example of Bayesian negative binomial regression in R using JAGS
+# synthetic data
+# 1 response (y) and 1 explanatory variable (x1) 
 
 
+library(R2jags)
+library(MASS)
+>>>>>>> origin/master
+
+set.seed(141)                                           # set seed to replicate example
+nobs <- 1500                                            # number of observations
+x1 <- rbinom(nobs,size=1, prob = 0.6)                   # random binomial variable
+xb <- 1 + 2.5*x1                                        # linear predictor
+theta <- 0.5                                            # INCLUDE NAME OF PARAMETER
+exb <- exp(xb)                                          
+nby <- rnegbin(n = nobs, mu = exb, theta = theta)       # create y as adjusted random normal variate
+negbml <-data.frame(nby, x1)
+
+<<<<<<< HEAD
 # Prepare data for prediction 
 M=500
 xx = seq(from = 0.95*min(x1), 
          to = 1.05*max(x1), 
          length.out = M)
 
+=======
+# prepare data for input
+>>>>>>> origin/master
 X <- model.matrix(~ x1, data=negbml)
 K <- ncol(X)
 
@@ -25,16 +53,22 @@ NB.data <- list(
   Y = negbml$nby,
   X = X,
   K = K,
+<<<<<<< HEAD
   N = nobs,
   M = M,
   xx = xx)
+=======
+  N = nrow(negbml))
+>>>>>>> origin/master
 
 
 sink("NBGLM.txt")
 cat(" model{
     # Priors for coefficients
     for (i in 1:K) { beta[i] ~ dnorm(0, 0.0001)}
+
     # Prior for dispersion
+<<<<<<< HEAD
     theta ~ dgamma(1e-3,1e-3)
     # Likelihood function
     for (i in 1:N){
@@ -55,12 +89,33 @@ cat(" model{
 
 }
     ",fill = TRUE)
+=======
+    theta ~ dunif(0.001, 5)
+
+    # Likelihood function
+    for (i in 1:N){
+        Y[i] ~ dnegbin(p[i], theta)
+        p[i] <- theta/(theta + mu[i])
+        log(mu[i]) <- eta[i]
+        eta[i] <- inprod(beta[], X[i,])
+        } 
+    }",fill = TRUE)
+>>>>>>> origin/master
 sink()
+
+
+# set initial values
 inits <- function () { list(
-  beta = rnorm(K, 0, 0.1), # Regression parameters
+  beta = rnorm(K, 0, 0.1), 
   theta = runif(0.00, 5) )
 }
+<<<<<<< HEAD
 params <- c("beta", "theta","Yx")
+=======
+
+# define parameters
+params <- c("beta", "theta")
+>>>>>>> origin/master
 NB2 <- jags(data = NB.data, 
             inits = inits,
             parameters = params,
@@ -70,6 +125,7 @@ NB2 <- jags(data = NB.data,
             n.burnin = 2500,
             n.iter = 5000)
             
+# check results
 print(NB2, intervals=c(0.025, 0.975), digits=3)
 
 
