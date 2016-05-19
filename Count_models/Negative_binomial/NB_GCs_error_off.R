@@ -15,7 +15,7 @@ dat1<- dat[,c("N_GC","MV","Type")]
 dat2 <- dat1[complete.cases(dat1),]
 dat3<-subset(dat2,Type=="E")
 
-write.csv(dat2,"GCs.csv",row.names=F)
+write.csv(dat3[,1:2],"GCs_Ellipticals.csv",row.names=F)
 
 
 nobs = nrow(dat3)
