@@ -55,8 +55,10 @@ This should be enough to get you ready for the exercises we will be working on.
 
 ### Chapter 1  - The Gaussian ###
 
+The Gaussian or normal probability distribution assumes that observations are closely clustered around the mean, and this amount is decaying quickly as we go farther away from the mean. 
 
 
+[Wikipedia]()
 [Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Normal)
 
 
