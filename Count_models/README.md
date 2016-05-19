@@ -11,6 +11,3 @@
         X explanatory variables with YYY  
         Example from [de Souza _et al_, 2015](http://adsabs.harvard.edu/abs/2015MNRAS.453.1928D)   
         Reproduces figure XXX 
-
-        _This paper was awarded 2016 IAA Award for Outstanding PostDoc publication in Astrostatistics_
-
