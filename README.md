@@ -88,11 +88,17 @@ The Bernoulli distribution is a special case of the two-point distribution, for 
 ### References ###
 
 de Souza _et al_, 2016, _Is the cluster environment quenching the Seyfert activity in elliptical and spiral galaxies?_, [arxiv:astro-ph/1603.06256](http://adsabs.harvard.edu/abs/2016arXiv160306256D), [BibTex](https://github.com/RafaelSdeSouza/ADA8/tree/master/bib/deSouza_2016.bib)  
+
 de Souza _et al_, 2015, _The overlooked potential of generalized linear models in astronomy - III. Bayesian negative binomial regression and globular cluster populations_, [MNRAS, 453, p.1928-1940](http://adsabs.harvard.edu/abs/2015MNRAS.453.1928D), [BibTex](https://github.com/RafaelSdeSouza/ADA8/tree/master/bib/deSouza_2015_GLMIII.bib)  
+
 Elliot _et al_, 2015, _The overlooked potential of Generalized Linear Models in astronomy-II: Gamma regression and photometric redshifts_, [Astronomy & Computing, 10, p. 61-72](http://adsabs.harvard.edu/abs/2015A%26C....10...61E), [BibTex](https://github.com/RafaelSdeSouza/ADA8/tree/master/bib/Elliot_2015_GLMII.bib)  
+
 de Souza _et al_, 2015, _The overlooked potential of Generalized Linear Models in astronomy, I: Binomial regression_, [Astronomy & Computing, 12, p. 21-32](http://adsabs.harvard.edu/abs/2015A%26C....12...21D), [BibTex](https://github.com/RafaelSdeSouza/ADA8/tree/master/deSouza_2015_GLMI.bib)  
+
 Hilbe, 2014, _Modeling Count Data_, [Cambridge University Press](http://www.cambridge.org/mq/academic/subjects/statistics-probability/statistical-theory-and-methods/modeling-count-data), [BibTex](https://github.com/RafaelSdeSouza/ADA8/tree/master/bib/Hilbe_2014.bib)  
+
 Hilbe, 2011, _Negative Binomial Regression_, [Cambridge University Press](http://www.cambridge.org/mq/academic/subjects/statistics-probability/statistical-theory-and-methods/negative-binomial-regression-2nd-edition?format=HB&isbn=9780521198158), [BibTex](https://github.com/RafaelSdeSouza/ADA8/tree/master/bib/Hilbe_2011.bib)
+
 
 
 ### Author ###
