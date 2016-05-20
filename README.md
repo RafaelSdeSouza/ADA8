@@ -106,7 +106,7 @@ Hilbe, 2011, _Negative Binomial Regression_, [Cambridge University Press](http:/
 
 ### Author ###
 
-**_Rafael da Silva de Souza, PhD_**il
+**_Rafael da Silva de Souza, PhD_**
 
 [Researcher - ELTE, Hungary](http://rafael2706.wix.com/rafaelsdesouza)  
 [Head and founder - The COsmostatistics INitiative (COIN)](https://asaip.psu.edu/organizations/iaa/iaa-working-group-of-cosmostatistics)  

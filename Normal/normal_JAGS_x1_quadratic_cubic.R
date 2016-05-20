@@ -17,7 +17,7 @@ set.seed(1056)                           # set seed to replicate example
 nobs= 500                                # number of observations
 x1 <- runif(nobs,-10,10)                 # random uniform variable
   
-xb <- -3 + 6*x1-1.75*x1^2+0.25*x1^3      # linear predictor
+xb <- -3 + 6*x1 - 1.75*x1^2 + 0.25*x1^3      # linear predictor
 y <- rnorm(nobs, xb, sd=20)              # create y as adjusted random normal variate
 
 
