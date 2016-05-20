@@ -63,7 +63,7 @@ The Gaussian or normal probability distribution assumes a bell-shaped distributi
 
 [Wikipedia](https://en.wikipedia.org/wiki/Normal_distribution)
 
-[Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Normal)
+[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Normal)
 
 
 
@@ -86,7 +86,7 @@ The Bernoulli distribution is a special case of the two-point distribution, for 
 
 [Wikipedia](https://en.wikipedia.org/wiki/Bernoulli_distribution)
 
-[Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Bernoulli)
+[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Bernoulli)
 
 ### References ###
 
