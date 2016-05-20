@@ -1,14 +1,12 @@
 ############### Required packages
-library(extrafont)
 require(ggplot2)
-require(MCMCpack)
-require(ggthemes)
 ############### Simulation 
 # define model parameters
 set.seed(13979)
 nobs <- 2500
-nmax =1.5
-x1 <- runif(nobs,0,nmax)
+nmax <- 1.5
+nmin <- - 0.2
+x1 <- runif(nobs,nmin,nmax)
 
 xb <- -3 + 13.5*x1-7*x1^2 
 exb <- 1/(1+exp(-xb)) # inverse-logit
@@ -17,11 +15,11 @@ logitmod <-data.frame(by, x1)
 
 
 binx<-0.05
-t.breaks <-cut(x1, seq(0,nmax, by=binx))
+t.breaks <-cut(x1, seq(nmin,nmax, by=binx))
 means <-tapply(by, t.breaks, mean)
 semean <-function(x) sd(x)/sqrt(length(x))
 means.se <-tapply(by, t.breaks, semean)
-gbin<-data.frame(x=seq(binx,nmax, by=binx),y=means)
+gbin<-data.frame(x=seq(nmin+binx,nmax, by=binx),y=means)
 
 glogit <- glm(by ~ x1+I(x1^2),data=logitmod,family = 'binomial')
 preds <- predict(glogit, type = 'response',se = TRUE)
@@ -44,17 +42,10 @@ ggplot(logitmod,aes(x=x1,y=by))+
   geom_point(aes(x=x,y=y),size=2.5,data=gbin,colour="gray70")+
   geom_errorbar(data=gbin,aes(x=x,y=y,ymin=y-2*means.se,ymax=y+2*means.se),alpha=0.85,
                 colour="gray70",width=0.005)+
-  geom_line(aes(y=pred.full2), col='orange3', size=1,data=gdata2,linetype="dashed") +  
-#  geom_line(aes(y=pred.full),data=gdata1,size=1,col='green3')+
+  geom_line(aes(y=pred.full2), col='orange', size=1,data=gdata2,linetype="dotted") +  
+  geom_line(aes(y=pred.full),data=gdata1,size=1,col='green3')+
   theme_hc() +
   ylab("y")+
-  xlab("x")+
-  theme(legend.background = element_rect(fill="white"),
-        legend.key = element_rect(fill = "white",color = "white"),
-        plot.background = element_rect(fill = "white"),
-        legend.position="top",
-        axis.title.y = element_text(vjust = 0.1,margin=margin(0,10,0,0)),
-        axis.title.x = element_text(vjust = -0.25),
-        text = element_text(size = 25,family="serif"))
+  xlab("x")+coord_cartesian(ylim=c(-0.2,1.05))
 
-quartz.save(type = 'pdf', file = 'normal_non.pdf',width = 7, height = 6)
+
