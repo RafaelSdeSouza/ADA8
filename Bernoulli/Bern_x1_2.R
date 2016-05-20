@@ -41,7 +41,8 @@ ggplot(logitmod,aes(x=x1,y=by))+
                 colour="gray70",width=0.005)+
   geom_line(aes(y=pred_norm), col='orange', size=1,data=data_norm,linetype="dotted") +  
   geom_line(aes(y=pred_logit),data=data_logit,size=1,col='green3')+
+  theme_bw()+
   ylab("y")+
-  xlab("x")+coord_cartesian(ylim=c(-0.2,1.05))
+ xlab("x")+coord_cartesian(ylim=c(-0.2,1.05))
 
 
