@@ -63,7 +63,16 @@ The Gaussian or normal probability distribution assumes that observations are cl
 [Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Normal)
 
 
-### Chapter 2 - Bernoulli models ###
+### Chapter 2 - Count models ###
+
+Count data is a statistical data type, a type of data in which the observations can take only the non-negative integer values {0, 1, 2, 3, ...}, and where these integers arise from counting rather than ranking. 
+
+[Wikipedia](https://en.wikipedia.org/wiki/Count_data)
+
+[Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Count_models)
+
+
+### Chapter 3 - Bernoulli models ###
 
 The Bernoulli distribution is the probability distribution of a random variable which takes the value 1 with success probability of p and the value 0 with failure probability of q=1-p. It can be used to represent a coin toss where 1 and 0 would represent "head" and "tail" (or vice versa), respectively. In particular, unfair coins would have p \neq 0.5.
 
@@ -72,15 +81,6 @@ The Bernoulli distribution is a special case of the two-point distribution, for 
 [Wikipedia](https://en.wikipedia.org/wiki/Bernoulli_distribution)
 
 [Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Bernoulli)
-
-
-### Chapter 3 - Count models ###
-
-Count data is a statistical data type, a type of data in which the observations can take only the non-negative integer values {0, 1, 2, 3, ...}, and where these integers arise from counting rather than ranking. 
-
-[Wikipedia](https://en.wikipedia.org/wiki/Count_data)
-
-[Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Count_models)
 
 
 ### Author ###
