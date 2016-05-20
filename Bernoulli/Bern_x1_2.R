@@ -8,7 +8,8 @@ nmax <- 1.5
 nmin <- - 0.2
 x1 <- runif(nobs,nmin,nmax)
 
-xb <- -3 + 13.5*x1-7*x1^2 
+#xb <- -3 + 13.5*x1-7*x1^2 
+xb <- -3 + 15*x1-7.25*x1^2 
 exb <- 1/(1+exp(-xb)) # inverse-logit
 by <- rbinom(nobs,size=1, prob = exb)
 logitmod <-data.frame(by, x1) 
@@ -35,12 +36,13 @@ data_norm <- data.frame(x1,pred_norm)
 ########
 
 ggplot(logitmod,aes(x=x1,y=by))+ 
-  geom_point(colour="cyan3",size=1,alpha=0.35,position = position_jitter (height  = 0.045))+
-  geom_point(aes(x=x,y=y),size=2.5,data=gbin,colour="gray70")+
+  geom_point(colour="cyan2",size=1,alpha=0.25,position = position_jitter (height  = 0.035))+
+  
   geom_errorbar(data=gbin,aes(x=x,y=y,ymin=y-2*means.se,ymax=y+2*means.se),alpha=0.85,
                 colour="gray70",width=0.005)+
-  geom_line(aes(y=pred_norm), col='orange', size=1,data=data_norm,linetype="dotted") +  
-  geom_line(aes(y=pred_logit),data=data_logit,size=1,col='green3')+
+  geom_line(aes(y=pred_norm), col='green2', size=1.2,data=data_norm,linetype="dotted") +  
+  geom_line(aes(y=pred_logit),data=data_logit,size=1.2,col='red3')+
+  geom_point(aes(x=x,y=y),size=2.5,data=gbin,colour="gray70")+
   theme_bw()+
   ylab("y")+
  xlab("x")+coord_cartesian(ylim=c(-0.2,1.05))
