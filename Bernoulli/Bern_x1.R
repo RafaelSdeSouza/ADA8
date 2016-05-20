@@ -9,13 +9,13 @@ nmin <- - 0.2
 x1 <- runif(nobs,nmin,nmax)
 
 
-xb <- -3 + 15*x1-7.25*x1^2 
+xb <- -3 + 5*x1
 exb <- 1/(1+exp(-xb)) # inverse-logit
 by <- rbinom(nobs,size=1, prob = exb)
 logitmod <-data.frame(by, x1) 
 
 ##########Bin data for visualization only ##########
-binx<-0.05
+binx<-0.1
 t.breaks <-cut(x1, seq(nmin,nmax, by=binx))
 means <-tapply(by, t.breaks, mean)
 semean <-function(x) sd(x)/sqrt(length(x))
@@ -24,13 +24,13 @@ gbin<-data.frame(x=seq(nmin+binx,nmax, by=binx),y=means)
 ##########
 
 # Fit a logit model 
-fit_logit <- glm(by ~ x1+I(x1^2),data=logitmod,family = 'binomial')
+fit_logit <- glm(by ~ x1,data=logitmod,family = 'binomial')
 pred_logit <- predict(fit_logit, type = 'response')
 data_logit <- data.frame(x1,pred_logit)
 ########
 
 # Fit a normal model 
-fit_norm <- lm(by ~ x1+I(x1^2),data = logitmod)
+fit_norm <- lm(by ~ x1,data = logitmod)
 pred_norm <- predict(fit_norm, type = 'response')
 data_norm <- data.frame(x1,pred_norm)
 ########
@@ -40,11 +40,11 @@ ggplot(logitmod,aes(x=x1,y=by))+
   
   geom_errorbar(data=gbin,aes(x=x,y=y,ymin=y-2*means.se,ymax=y+2*means.se),alpha=0.85,
                 colour="gray70",width=0.005)+
-  geom_line(aes(y=pred_norm), col='green2', size=1.2,data=data_norm,linetype="dotted") +  
-  geom_line(aes(y=pred_logit),data=data_logit,size=1.2,col='red3')+
+  geom_line(aes(y=pred_norm), col='green2', size=1.4,data=data_norm,linetype="dotted") +  
+  geom_line(aes(y=pred_logit),data=data_logit,size=1.4,col='red3')+
   geom_point(aes(x=x,y=y),size=2.5,data=gbin,colour="gray70")+
   theme_bw()+
   ylab("y")+
- xlab("x")+coord_cartesian(ylim=c(-0.2,1.025))
+ xlab("x")+coord_cartesian(ylim=c(-0.1,1.05))
 
 
