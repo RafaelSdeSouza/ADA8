@@ -45,6 +45,6 @@ ggplot(logitmod,aes(x=x1,y=by))+
   geom_point(aes(x=x,y=y),size=2.5,data=gbin,colour="gray70")+
   theme_bw()+
   ylab("y")+
- xlab("x")+coord_cartesian(ylim=c(-0.2,1.05))
+ xlab("x")+coord_cartesian(ylim=c(-0.2,1.025))
 
 
