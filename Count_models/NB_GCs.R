@@ -14,9 +14,7 @@
 
 require(R2jags)
 require(ggplot2)
-require(ggthemes)
 require(scales)
-require(jagstools)
 source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
 
 # Read data
