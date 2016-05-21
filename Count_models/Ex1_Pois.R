@@ -23,29 +23,32 @@ poismod <- data.frame(py,x1)
 
 
 # Prepare data for prediction 
-M=1000
+M=1000                                                # Sample size
 xx = seq(from =  min(x1), 
          to =  max(x1), 
          length.out = M)
 
 # prepare data for JAGS input
 X <- model.matrix(~ x1, data = poismod)
-K <- ncol(X)
+K <- ncol(X)                                          # Number of betas
 
 POIS.data <- list(Y = py,
                   X = X,       
-                  K = K,           #Number of betas
+                  K = K,           
                   N = nobs,
                   xx = xx, 
-                  M = M)           #Sample size
+                  M = M)           
 
 
 # JAGS model
 Pois<-"model{
-  
-    for (i in 1:K) {beta[i] ~ dnorm(0, 1e-4)}               # non-informative prior for coefficients
+
+    # non-informative prior for coefficients  
+    for (i in 1:K) {beta[i] ~ dnorm(0, 1e-4)}               
+
+    # likelihood function
     for (i in 1:N) {
-        Y[i] ~ dpois(mu[i])                                 # likelihood function
+        Y[i] ~ dpois(mu[i])                                 
         log(mu[i]) <- inprod(beta[], X[i,])  
     }
 
@@ -58,11 +61,13 @@ Pois<-"model{
 
 # set initial values
 inits  <- function () {
-    list(beta = rnorm(K, 0, 0.1))}
+    list(beta = rnorm(K, 0, 0.1))
+}
 
 # set parameter for prediction
 params <- c("Yx")
 
+# fit
 P1 <-   jags(data       = POIS.data,
              inits      = inits,
              parameters = params,
