@@ -8,7 +8,7 @@ require(jagstools)
 source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
 
 # Read data
-NGC_dat = read.csv(file="https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Count_models/Negative_binomial/GCs_Ellipticals.csv",header=TRUE,dec=".")
+NGC_dat = read.csv(file="https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Count_models/GCs_Ellipticals.csv",header=TRUE,dec=".")
 
 # Look the data
 head(NGC_dat)
