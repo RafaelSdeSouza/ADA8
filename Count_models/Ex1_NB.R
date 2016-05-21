@@ -10,19 +10,22 @@
 # Example of Bayesian negative binomial regression in R using JAGS
 # synthetic data
 # 1 response (y) and 1 explanatory variable (x1) 
-set.seed(141)
+
 library(R2jags)
 library(MASS)
 library(scales)
 require(ggplot2)
 source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
-nobs <- 750
-x1 <- runif(nobs,0,4)
-xb <- -1 + 2.5*x1
-theta <- 0.75
-exb <- exp(xb)
-nby <- rnegbin(n = nobs, mu = exb, theta = theta)
-negbml <-data.frame(nby, x1)
+
+
+set.seed(141)                                              # set seed to replicate example
+nobs <- 750                                                # number of obs in model
+x1 <- runif(nobs,0,4)                                      # random uniform variable
+xb <- -1 + 2.5*x1                                          # linear predictor
+
+theta <- 0.75                                              # probability of success
+exb <- exp(xb)                                             
+nby <- rnegbin(n = nobs, mu = exb, theta = theta)          # create y as adjusted random variate
 
 # Prepare data for prediction 
 M=500
@@ -32,7 +35,7 @@ xx = seq(from = 0.95*min(x1),
 
 
 # prepare data for input
-
+negbml <-data.frame(nby, x1)
 X <- model.matrix(~ x1, data=negbml)
 K <- ncol(X)
 
@@ -45,7 +48,7 @@ NB.data <- list(
   xx = xx)
 
 
-
+# JAGS model
 sink("NBGLM.txt")
 cat(" model{
     # Priors for coefficients
@@ -107,7 +110,7 @@ yx <- jagsresults(x=NB2, params=c('Yx'))
 NBdata <- data.frame(x1,nby)
 gdata <- data.frame(x =xx, mean = yx[,"50%"],lwr1=yx[,"25%"],lwr2=yx[,"2.5%"],upr1=yx[,"75%"],upr2=yx[,"97.5%"])
 
-
+# transform scale
 asinh_trans <- function(){
   trans_new(name = 'asinh', transform = function(x) asinh(x), 
             inverse = function(x) sinh(x))
