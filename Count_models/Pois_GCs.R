@@ -6,7 +6,7 @@
 #
 # Example of Bayesian Poisson regression in R using JAGS
 # 
-# real data from Harris et al.,2014
+# real data from Harris et al.,2011
 # complete catalog available at http://www.physics.mcmaster.ca/~harris/GCS_table.txt
 #
 # 1 response (y): nunmber of globular clusters
