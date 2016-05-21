@@ -1,40 +1,52 @@
-############### Required packages
+# ADA8 – Astronomical Data Analysis Summer School
+# Bayesian tutorial by Rafael S. de Souza - ELTE, Hungary & COIN
+#
+# Partial example from Bayesian Models for Astrophysical Data 
+# by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
+#
+# Example of Bayesian Logit regression in R
+# synthetic data
+# 1 response (y) and 1 explanatory variable (x1) 
+
+
 require(ggplot2)
-############### Simulation 
-# define model parameters
-set.seed(13979)
-nobs <- 2500
-nmax <- 1.5
+
+set.seed(13979)                         # set seed to replicate example
+nobs <- 2500                            # number of observations
+nmax <- 1.5                             # limit on explanatory variable
 nmin <- - 0.2
-x1 <- runif(nobs,nmin,nmax)
+x1 <- runif(nobs,nmin,nmax)             # random uniform variable
 
 
-xb <- -3 + 5*x1
-exb <- 1/(1+exp(-xb)) # inverse-logit
-by <- rbinom(nobs,size=1, prob = exb)
-logitmod <-data.frame(by, x1) 
+xb <- -3 + 5*x1                         # linear predictor
+exb <- 1/(1+exp(-xb))                   # inverse-logit link
+by <- rbinom(nobs,size=1, prob = exb)   # create y as adjusted random bernoulli variate
+logitmod <-data.frame(by, x1)           # create data frame
 
-##########Bin data for visualization only ##########
+
+
+# Fit a logit model 
+fit_logit <- glm(by ~ x1,data=logitmod,family = 'binomial')
+pred_logit <- predict(fit_logit, type = 'response')
+data_logit <- data.frame(x1,pred_logit)
+
+
+# Fit a normal model - for comparison reasons
+fit_norm <- lm(by ~ x1,data = logitmod)
+pred_norm <- predict(fit_norm, type = 'response')
+data_norm <- data.frame(x1,pred_norm)
+
+
+# bin data for visualization only 
 binx<-0.1
 t.breaks <-cut(x1, seq(nmin,nmax, by=binx))
 means <-tapply(by, t.breaks, mean)
 semean <-function(x) sd(x)/sqrt(length(x))
 means.se <-tapply(by, t.breaks, semean)
 gbin<-data.frame(x=seq(nmin+binx,nmax, by=binx),y=means)
-##########
 
-# Fit a logit model 
-fit_logit <- glm(by ~ x1,data=logitmod,family = 'binomial')
-pred_logit <- predict(fit_logit, type = 'response')
-data_logit <- data.frame(x1,pred_logit)
-########
 
-# Fit a normal model 
-fit_norm <- lm(by ~ x1,data = logitmod)
-pred_norm <- predict(fit_norm, type = 'response')
-data_norm <- data.frame(x1,pred_norm)
-########
-
+# plot
 ggplot(logitmod,aes(x=x1,y=by))+ 
   geom_point(colour="cyan2",size=1,alpha=0.25,position = position_jitter (height  = 0.035))+
   

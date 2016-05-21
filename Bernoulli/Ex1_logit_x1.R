@@ -14,7 +14,7 @@ source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_fu
 
 
 set.seed(1056)                           # set seed to replicate example
-nobs= 1000                               # number of obs in model 
+nobs= 1000                               # number of obsservations 
 x1 <- runif(nobs,0,3)                    # random uniform variable
 eta <- -6 + 3.5*x1                       # linear predictor
 p <- 1/(1+exp(-eta))                     # inverse-logit link
