@@ -30,7 +30,7 @@
 
       </header>
       <section>
-        <p><img src="images/COIN.png" width="800" align="right"></p>
+        <p><img src="https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/images/COIN.png" width="800" align="right"></p>
 
 <h1>
 <a id="tutorial-on-bayesian-modeling" class="anchor" href="#tutorial-on-bayesian-modeling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tutorial on Bayesian Modeling</h1>
@@ -72,27 +72,33 @@ Hilbe, de Souza and Ishida, <em>in prep</em>, Cambridge University Press  </p>
 
 <p>If you are using Linux, make sure to add the appropriate repository before installing.  </p>
 
-<p>Open the file <code>/etc/apt/sources.list</code> with your favorite text editor and add the following line::</p>
+<p>Open the file <code>/etc/apt/sources.list</code> with your favorite text editor and add the following line:</p>
 
 <pre><code>deb http://cran.cnr.berkeley.edu/bin/linux/ubuntu trusty/
 </code></pre>
 
-<p>To install R and JAGS go to the command line and type::</p>
+<p>For deeper instructions and other Linux flavours see <a href="https://cran.r-project.org/bin/linux/ubuntu/README">this page</a>.</p>
+
+<p>Then, in the command line do:</p>
 
 <pre><code>sudo apt-get update
-sudo apt-get install r-base
+</code></pre>
+
+<p>Do not worry if you got a couple of error messages. This is not significant for our purpouses. The other steps should work as planned despite of them.  </p>
+
+<p>To install R and JAGS go to the command line and type:</p>
+
+<pre><code>sudo apt-get install r-base
 sudo apt-get install jags
 </code></pre>
 
-<p>It likely that you will get an error message after the <code>update</code>. This is not significant for our purpouses. The other steps should work as planned despite of them.  </p>
-
-<p>In order to get Rstudio choose the appropriate version of Rstudio from <a href="https://www.rstudio.com/products/rstudio/download/">this page</a>.</p>
+<p>In order to get Rstudio choose the appropriate version of from <a href="https://www.rstudio.com/products/rstudio/download/">this page</a>.</p>
 
 <p>After download is completed double click in the <code>.deb</code> file. This will automatically open Ubuntu Software Center. Click on Install.    </p>
 
 <p><strong>R packages</strong></p>
 
-<p>Once Rstudio is installed you will nedd few R packages. </p>
+<p>Once Rstudio is installed you will need a few R packages. </p>
 
 <p>These can be done in 2 ways:</p>
 
@@ -126,17 +132,33 @@ install.packages(<span class="pl-smi">pac</span>,<span class="pl-v">dependencies
 
 <p>In order to avoid problems with file paths it is advisable to clone this repository and work within it.  </p>
 
-<p>To do so choose go to the command line and navigate to a location where you would like to work. Then type::</p>
+<p>To do so choose go to the command line and navigate to a location where you would like to work. Then type:</p>
 
 <pre><code>git clone git@github.com:RafaelSdeSouza/ADA8.git
 </code></pre>
 
 <p>This should be enough to get you ready for the examples we will be working on. </p>
 
+<p>If you do not have git installed you can get it typing:</p>
+
+<pre><code>sudo apt-get install git
+</code></pre>
+
+<p><strong>Staying up to date</strong></p>
+
+<p>This is a work in progress and it will be continuously updated so erros can be fixed and complementary material can be added. </p>
+
+<p>It is advisable to make sure you have the latest version before start working in you local directory. To do so, in the command line navigate to your copy of this repository and type:</p>
+
+<pre><code>git pull 
+</code></pre>
+
+<p>Then you are certain to get all the bug fixes and improvements available.</p>
+
+<p>Have fun!</p>
+
 <h3>
 <a id="chapter-1----gaussian-models" class="anchor" href="#chapter-1----gaussian-models" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter 1  - Gaussian models</h3>
-
-<p>The Gaussian or normal probability distribution assumes a bell-shaped distribution centred in the mean . </p>
 
 <p><a href="https://en.wikipedia.org/wiki/Normal_distribution">Wikipedia</a></p>
 
@@ -145,16 +167,12 @@ install.packages(<span class="pl-smi">pac</span>,<span class="pl-v">dependencies
 <h3>
 <a id="chapter-2---bernoulli-models" class="anchor" href="#chapter-2---bernoulli-models" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter 2 - Bernoulli models</h3>
 
-<p>The Bernoulli distribution is the probability distribution of a random variable which takes the value 1 with success probability of p and the value 0 with failure probability of q=1-p. It can be used to represent a coin toss where 1 and 0 would represent "head" and "tail" (or vice versa), respectively.</p>
-
 <p><a href="https://en.wikipedia.org/wiki/Bernoulli_distribution">Wikipedia</a></p>
 
 <p><a href="https://github.com/RafaelSdeSouza/ADA8/tree/eebf6e57982f8817ec678128967580ccfdae1f67/Bernoulli">Tutorial Examples</a></p>
 
 <h3>
 <a id="chapter-3---count-models" class="anchor" href="#chapter-3---count-models" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter 3 - Count models</h3>
-
-<p>Count data can take only non-negative integer values {0, 1, 2, 3, ...}, which arise from counting rather than ranking. </p>
 
 <p><a href="https://en.wikipedia.org/wiki/Count_data">Wikipedia</a></p>
 
