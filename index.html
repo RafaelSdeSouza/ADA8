@@ -30,7 +30,7 @@
 
       </header>
       <section>
-        <p><img src="../images/COIN.png" width="800" align="right"></p>
+        <p><img src="images/COIN.png" width="800" align="right"></p>
 
 <h1>
 <a id="tutorial-on-bayesian-modeling" class="anchor" href="#tutorial-on-bayesian-modeling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tutorial on Bayesian Modeling</h1>
@@ -68,6 +68,30 @@ Hilbe, de Souza and Ishida, <em>in prep</em>, Cambridge University Press  </p>
 </li>
 </ul>
 
+<p><strong>For Linux users</strong></p>
+
+<p>If you are using Linux, make sure to add the appropriate repository before installing.  </p>
+
+<p>Open the file <code>/etc/apt/sources.list</code> with your favorite text editor and add the following line::</p>
+
+<pre><code>deb http://cran.cnr.berkeley.edu/bin/linux/ubuntu trusty/
+</code></pre>
+
+<p>To install R and JAGS go to the command line and type::</p>
+
+<pre><code>sudo apt-get update
+sudo apt-get install r-base
+sudo apt-get install jags
+</code></pre>
+
+<p>It likely that you will get an error message after the <code>update</code>. This is not significant for our purpouses. The other steps should work as planned despite of them.  </p>
+
+<p>In order to get Rstudio choose the appropriate version of Rstudio from <a href="https://www.rstudio.com/products/rstudio/download/">this page</a>.</p>
+
+<p>After download is completed double click in the <code>.deb</code> file. This will automatically open Ubuntu Software Center. Click on Install.    </p>
+
+<p><strong>R packages</strong></p>
+
 <p>Once Rstudio is installed you will nedd few R packages. </p>
 
 <p>These can be done in 2 ways:</p>
@@ -98,7 +122,16 @@ install.packages(<span class="pl-smi">pac</span>,<span class="pl-v">dependencies
 </li>
 </ul>
 
-<p>This should be enough to get you ready for the exercises we will be working on. </p>
+<p><strong>Getting the scripts</strong></p>
+
+<p>In order to avoid problems with file paths it is advisable to clone this repository and work within it.  </p>
+
+<p>To do so choose go to the command line and navigate to a location where you would like to work. Then type::</p>
+
+<pre><code>git clone git@github.com:RafaelSdeSouza/ADA8.git
+</code></pre>
+
+<p>This should be enough to get you ready for the examples we will be working on. </p>
 
 <h3>
 <a id="chapter-1----gaussian-models" class="anchor" href="#chapter-1----gaussian-models" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter 1  - Gaussian models</h3>
@@ -107,27 +140,25 @@ install.packages(<span class="pl-smi">pac</span>,<span class="pl-v">dependencies
 
 <p><a href="https://en.wikipedia.org/wiki/Normal_distribution">Wikipedia</a></p>
 
-<p><a href="https://github.com/RafaelSdeSouza/ADA8/tree/master/Normal">Tutorial Examples</a></p>
+<p><a href="https://github.com/RafaelSdeSouza/ADA8/tree/eebf6e57982f8817ec678128967580ccfdae1f67/Normal">Tutorial Examples</a></p>
 
 <h3>
-<a id="chapter-2---count-models" class="anchor" href="#chapter-2---count-models" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter 2 - Count models</h3>
+<a id="chapter-2---bernoulli-models" class="anchor" href="#chapter-2---bernoulli-models" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter 2 - Bernoulli models</h3>
+
+<p>The Bernoulli distribution is the probability distribution of a random variable which takes the value 1 with success probability of p and the value 0 with failure probability of q=1-p. It can be used to represent a coin toss where 1 and 0 would represent "head" and "tail" (or vice versa), respectively.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Bernoulli_distribution">Wikipedia</a></p>
+
+<p><a href="https://github.com/RafaelSdeSouza/ADA8/tree/eebf6e57982f8817ec678128967580ccfdae1f67/Bernoulli">Tutorial Examples</a></p>
+
+<h3>
+<a id="chapter-3---count-models" class="anchor" href="#chapter-3---count-models" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter 3 - Count models</h3>
 
 <p>Count data can take only non-negative integer values {0, 1, 2, 3, ...}, which arise from counting rather than ranking. </p>
 
 <p><a href="https://en.wikipedia.org/wiki/Count_data">Wikipedia</a></p>
 
-<p><a href="https://github.com/RafaelSdeSouza/ADA8/tree/master/Count_models">Tutorial Examples</a></p>
-
-<h3>
-<a id="chapter-3---bernoulli-models" class="anchor" href="#chapter-3---bernoulli-models" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter 3 - Bernoulli models</h3>
-
-<p>The Bernoulli distribution is the probability distribution of a random variable which takes the value 1 with success probability of p and the value 0 with failure probability of q=1-p. It can be used to represent a coin toss where 1 and 0 would represent "head" and "tail" (or vice versa), respectively.</p>
-
-<p>The Bernoulli distribution is a special case of the two-point distribution, for which the two possible outcomes need not be 0 and 1. It is also a special case of the binomial distribution; the Bernoulli distribution is a binomial distribution where the number of trials is equal to 1.</p>
-
-<p><a href="https://en.wikipedia.org/wiki/Bernoulli_distribution">Wikipedia</a></p>
-
-<p><a href="https://github.com/RafaelSdeSouza/ADA8/tree/master/Bernoulli">Tutorial Examples</a></p>
+<p><a href="https://github.com/RafaelSdeSouza/ADA8/tree/eebf6e57982f8817ec678128967580ccfdae1f67/Count_models">Tutorial Examples</a></p>
 
 <h3>
 <a id="references" class="anchor" href="#references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
