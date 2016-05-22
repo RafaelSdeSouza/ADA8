@@ -59,18 +59,18 @@ cat(" model{
     theta ~ dgamma(1e-3,1e-3)
     # Likelihood function
     for (i in 1:N){
-    Y[i] ~ dnegbin(p[i], theta)
-    p[i] <- theta/(theta + mu[i])
-    mu[i] <- exp(eta[i])
-    eta[i] <- inprod(beta[], X[i,])
+        Y[i] ~ dnegbin(p[i], theta)
+        p[i] <- theta/(theta + mu[i])
+        mu[i] <- exp(eta[i])
+        eta[i] <- inprod(beta[], X[i,])
     }
 
   # Prediction
     for (j in 1:M){
-    etax[j] <- beta[1]+beta[2]*xx[j]
-    px[j] <- theta/(theta + mux[j])
-    mux[j] <- exp(etax[j])
-    Yx[j] ~ dnegbin(px[j], theta)
+        etax[j] <- beta[1]+beta[2]*xx[j]
+        px[j] <- theta/(theta + mux[j])
+        mux[j] <- exp(etax[j])
+        Yx[j] ~ dnegbin(px[j], theta)
    }
 }
   ",fill = TRUE)
@@ -124,6 +124,11 @@ ggplot(NBdata,aes(x=x1,y=nby))+ geom_point(colour="green",size=1,alpha=0.35)+
   theme_bw()+
   scale_y_continuous(trans = 'asinh',breaks=c(0,10,100,1000,10000,100000),
   labels=c("0",expression(10^1),expression(10^2),expression(10^3),expression(10^4),expression(10^5)))
+
+
+
+
+
 
 
 
