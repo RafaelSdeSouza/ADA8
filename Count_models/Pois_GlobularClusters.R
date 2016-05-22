@@ -19,7 +19,7 @@ require(scales)
 source("..//Auxiliar_functions/jagsresults.R")
 
 # Read data
-NGC_dat = read.csv(file="..//data_astro/GCs_Ellipticals.csv",header=TRUE,dec=".")
+NGC_dat = read.csv(file="..//astro_data/GCs_Ellipticals.csv",header=TRUE,dec=".")
 
 # Look at the data
 head(NGC_dat)
