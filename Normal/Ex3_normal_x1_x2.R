@@ -21,7 +21,7 @@ y <- rnorm(nobs, xb, sd=1)     # create y as adjusted random normal variate
 
 
 fit <- lm(y~x1+x2)             # Compute the linear regression (z = ax + by + d)
-summary(fit)
+summary(fit)                   # check numerical results
 
 grid.lines = 26                # predict values on regular xy grid
 x1.pred <- seq(1.01*min(x1), 0.99*max(x1), length.out = grid.lines)

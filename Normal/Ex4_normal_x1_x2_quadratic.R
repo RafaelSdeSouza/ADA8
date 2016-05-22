@@ -21,7 +21,7 @@ y <- rnorm(nobs, xb, sd=0.5)                      # create y as adjusted random 
 
 
 fit <- lm(y~x1+x2+I(x1^2)+I(x2^2))                # Compute the linear regression 
-summary(fit)
+summary(fit)                                      # check numerical results
 
 # predict values on regular xy grid
 grid.lines = 26
