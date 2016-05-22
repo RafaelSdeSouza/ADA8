@@ -9,7 +9,7 @@
 # 1 response (y) and 1 explanatory variable (x1)
 
 require(R2jags)
-source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
+source("..//Auxiliar_functions/jagsresults.R")
 require(ggplot2)
 
 set.seed(1056)                 # set seed to replicate example
@@ -98,5 +98,6 @@ ggplot(normdata,aes(x=x1,y=y))+ geom_point(colour="#de2d26",size=1,alpha=0.35)+
   geom_point(size=1.5,colour="red3")+
   geom_ribbon(data=gdata,aes(x=xx,ymin=lwr1, ymax=upr1,y=NULL), alpha=0.45, fill=c("orange3"),show.legend=FALSE) +
   geom_ribbon(data=gdata,aes(x=xx,ymin=lwr2, ymax=upr2,y=NULL), alpha=0.35, fill = c("orange"),show.legend=FALSE) +
-  geom_line(data=gdata,aes(x=xx,y=mean),colour="gray25",linetype="dashed",size=1,show.legend=FALSE)
+  geom_line(data=gdata,aes(x=xx,y=mean),colour="gray25",linetype="dashed",size=1,show.legend=FALSE)+
+  theme_bw()
  
