@@ -35,17 +35,17 @@ In order to optimize the time spent in the examples and practical applications, 
 
 If you are using Linux, make sure to add the appropriate repository before installing.  
 
-Open the file ``/etc/apt/sources.list`` with your favorite text editor and add the following line::
+Open the file ``/etc/apt/sources.list`` with your favorite text editor and add the following line:
 
     deb http://cran.cnr.berkeley.edu/bin/linux/ubuntu trusty/
 
-Then, in the command line do::
+Then, in the command line do:
 
     sudo apt-get update
 
 Do not worry if you got a couple of error messages. This is not significant for our purpouses. The other steps should work as planned despite of them.  
 
-To install R and JAGS go to the command line and type::
+To install R and JAGS go to the command line and type:
 
     sudo apt-get install r-base
     sudo apt-get install jags
@@ -85,7 +85,7 @@ These can be done in 2 ways:
 
 In order to avoid problems with file paths it is advisable to clone this repository and work within it.  
 
-To do so choose go to the command line and navigate to a location where you would like to work. Then type::
+To do so choose go to the command line and navigate to a location where you would like to work. Then type:
 
     git clone git@github.com:RafaelSdeSouza/ADA8.git
 
