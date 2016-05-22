@@ -3,7 +3,7 @@
 
 * Frequentist Normal linear regression in R  
         [1 explanatory variable](https://github.com/RafaelSdeSouza/ADA8/blob/master/Normal/Ex1_normal_x1.R)  
-        [1 explanatory variables with 1 quadratic term](https://github.com/RafaelSdeSouza/ADA8/blob/master/Normal/Ex2_normal_x1_quadratic.R)  
+        [1 explanatory variable with 1 quadratic term](https://github.com/RafaelSdeSouza/ADA8/blob/master/Normal/Ex2_normal_x1_quadratic.R)  
         [2 explanatory variables](https://github.com/RafaelSdeSouza/ADA8/blob/master/Normal/Ex3_normal_x1_x2.R)  
         [2 explanatory variables with 2 quadratic terms](https://github.com/RafaelSdeSouza/ADA8/blob/master/Normal/Ex4_normal_x1_x2_quadratic.R)
 

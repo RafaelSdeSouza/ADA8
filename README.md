@@ -63,30 +63,32 @@ The Gaussian or normal probability distribution assumes a bell-shaped distributi
 
 [Wikipedia](https://en.wikipedia.org/wiki/Normal_distribution)
 
-[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Normal)
+[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/eebf6e57982f8817ec678128967580ccfdae1f67/Normal)
 
 
 
+### Chapter 2 - Bernoulli models ###
 
-### Chapter 2 - Count models ###
+The Bernoulli distribution is the probability distribution of a random variable which takes the value 1 with success probability of p and the value 0 with failure probability of q=1-p. It can be used to represent a coin toss where 1 and 0 would represent "head" and "tail" (or vice versa), respectively.
+
+
+[Wikipedia](https://en.wikipedia.org/wiki/Bernoulli_distribution)
+
+[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/eebf6e57982f8817ec678128967580ccfdae1f67/Bernoulli)
+
+
+
+### Chapter 3 - Count models ###
 
 Count data can take only non-negative integer values {0, 1, 2, 3, ...}, which arise from counting rather than ranking. 
 
 [Wikipedia](https://en.wikipedia.org/wiki/Count_data)
 
-[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Count_models)
+[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/eebf6e57982f8817ec678128967580ccfdae1f67/Count_models)
 
 
 
-### Chapter 3 - Bernoulli models ###
 
-The Bernoulli distribution is the probability distribution of a random variable which takes the value 1 with success probability of p and the value 0 with failure probability of q=1-p. It can be used to represent a coin toss where 1 and 0 would represent "head" and "tail" (or vice versa), respectively.
-
-The Bernoulli distribution is a special case of the two-point distribution, for which the two possible outcomes need not be 0 and 1. It is also a special case of the binomial distribution; the Bernoulli distribution is a binomial distribution where the number of trials is equal to 1.
-
-[Wikipedia](https://en.wikipedia.org/wiki/Bernoulli_distribution)
-
-[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Bernoulli)
 
 ### References ###
 

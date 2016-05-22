@@ -4,26 +4,25 @@
 # Partial example from Bayesian Models for Astrophysical Data 
 # by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
 #
-# Example of frequentist linear regression in R
+# Example of frequentist logit regression in R
 # synthetic data
-# 1 response (y) and 2 explanatory variables (x1,x2) with 2 quadratic terms
+# 1 response (y) and 2 explanatory variables (x1,x2)        
 
-#install.packages("plot3D",dependencies = T)      # Run this if plot3D not previously installed
+#install.packages("plot3D",dependencies = T)          # Run this if plot3D not previously installed
 
 require("plot3D")
 
-set.seed(1056)                                    # set seed to replicate example
-nobs= 1000                                         # number of obs in model 
-x1 <- runif(nobs,0,7)                             # random uniform variable
+set.seed(1056)                                        # set seed to replicate example
+nobs= 1000                                            # number of obs in model 
+x1 <- runif(nobs,0,7)                                 # random uniform variable
 x2 <- runif(nobs,0,7) 
-eta <- 1 - 1.5*x1+1.5*x2          # linear predictor, xb
-p <- 1/(1+exp(-eta))                     # inverse-logit link
-y <- rbinom(nobs,size=1, prob = p)      # create y as adjusted random bernoulli variate
+eta <- 1 - 1.5*x1 + 1.5*x2                            # linear predictor, xb
+p <- 1/(1+exp(-eta))                                  # inverse-logit link
+y <- rbinom(nobs,size=1, prob = p)                    # create y as adjusted random variate
 
 
-
-fit <- glm(y~x1+x2,family = "binomial")                # Compute the linear regression 
-summary(fit)
+fit <- glm(y~x1+x2,family = "binomial")               # Compute the linear regression 
+summary(fit)                                          # check numerical results
 
 # predict values on regular xy grid
 grid.lines = 30

@@ -13,16 +13,16 @@
 require("plot3D")
 
 set.seed(1056)                                    # set seed to replicate example
-nobs= 1000                                         # number of obs in model 
+nobs= 1000                                        # number of obs in model 
 x1 <- runif(nobs,0,6)                             # random uniform variable
 x2 <- runif(nobs,0,6) 
-eta <- -1 + 4*x1-1.25*x1^2 -2.5*x2+0.75*x2^2          # linear predictor, xb
-p <- 1/(1+exp(-eta))                     # inverse-logit link
-y <- rbinom(nobs,size=1, prob = p)      # create y as adjusted random bernoulli variate
+eta <- -1 + 4*x1-1.25*x1^2 -2.5*x2+0.75*x2^2      # linear predictor, xb
+p <- 1/(1+exp(-eta))                              # inverse-logit link
+y <- rbinom(nobs,size=1, prob = p)                # create y as adjusted random bernoulli variate
 
 
 
-fit <- glm(y~x1+x2+I(x1^2)+I(x2^2),family = "binomial")                # Compute the linear regression 
+fit <- glm(y~x1+x2+I(x1^2)+I(x2^2),family = "binomial")   # Compute the linear regression 
 summary(fit)
 
 # predict values on regular xy grid

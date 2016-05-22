@@ -1,17 +1,20 @@
-# ADA8 – Astronomical Data Analysis Summer School
+.# ADA8 – Astronomical Data Analysis Summer School
 # Bayesian tutorial by Rafael S. de Souza - ELTE, Hungary & COIN
 #
 # Partial example from Bayesian Models for Astrophysical Data 
 # by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
 #
 # Example of Bayesian Logit regression in R using JAGS
-# synthetic data
-# 1 response (y) and 1 explanatory variable (x1) 
+# real data from Biffi and Maio, 2013 - http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1309.2283
+# 
+# 1 response (y): star formation
+# 1 explanatory variable (x1): molecular fraction
 
 require(R2jags)
 require(ggplot2)
 source("..//Auxiliar_functions/jagsresults.R")
 
+# read data
 SFR_dat<-read.csv("..//astro_data/SFR.csv")
 
 x1 <- log(SFR_dat$Xmol,10)                   
@@ -43,22 +46,22 @@ logit_data <- list(Y  = logitmod$by, # Response variable
 # JAGS code
 LOGIT<-"model{
 
-# Diffuse normal priors for predictors
-for (i in 1:K) { beta[i] ~ dnorm(0, 0.0001) }
+    # Diffuse normal priors for predictors
+    for (i in 1:K) { beta[i] ~ dnorm(0, 0.0001) }
 
-# Likelihood function 
-for (i in 1:N){  
-Y[i] ~ dbern(p[i])
-logit(p[i]) <- eta[i]
-eta[i]  <- inprod(beta[], X[i,])
-}
+    # Likelihood function 
+    for (i in 1:N){  
+        Y[i] ~ dbern(p[i])
+        logit(p[i]) <- eta[i]
+        eta[i]  <- inprod(beta[], X[i,])
+    }
 
-# Prediction for new data
-for (j in 1:M){
-etax[j]<-inprod(beta[], XX[j,])
-logit(px[j]) <- etax[j]
-Yx[j]~dbern(px[j])
-}
+    # Prediction for new data
+    for (j in 1:M){
+        etax[j]<-inprod(beta[], XX[j,])
+        logit(px[j]) <- etax[j]
+        Yx[j]~dbern(px[j])
+    }
 }"
 
 #A function to generate initial values for mcmc
@@ -81,13 +84,8 @@ jagsfit<- jags(data       = logit_data,
 
 
 # check results
-
 jagsresults(x=jagsfit, params=c("beta"))
 
-# Plot
-y <- jagsresults(x=jagsfit, params=c('px'))
-x <- xx
-gdata <- data.frame(x =xx, mean = y[,"mean"],lwr1=y[,"25%"],lwr2=y[,"2.5%"],upr1=y[,"75%"],upr2=y[,"97.5%"])
 
 # Bin data for visualization
 binx<-0.5
@@ -96,6 +94,10 @@ means <-tapply(by, t.breaks, mean)
 semean <-function(x) sd(x)/sqrt(length(x))
 means.se <-tapply(by, t.breaks, semean)
 
+# Plot
+y <- jagsresults(x=jagsfit, params=c('px'))
+x <- xx
+gdata <- data.frame(x =xx, mean = y[,"mean"],lwr1=y[,"25%"],lwr2=y[,"2.5%"],upr1=y[,"75%"],upr2=y[,"97.5%"])
 
 gbin<-data.frame(x=seq(binx+min(x1),max(x1), by=binx),y=means)
 
