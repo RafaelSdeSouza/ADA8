@@ -15,7 +15,7 @@
 require(R2jags)
 require(ggplot2)
 require(mcmcplots)
-source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
+source("..//Auxiliar_functions/jagsresults.R")
 
 # Read data
 dat<-read.csv("../astro_data/HR.csv",header = T)
