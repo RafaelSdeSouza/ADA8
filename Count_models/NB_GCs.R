@@ -15,10 +15,10 @@
 require(R2jags)
 require(ggplot2)
 require(scales)
-source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
+source("..//Auxiliar_functions/jagsresults.R")
 
 # Read data
-NGC_dat = read.csv(file="https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/data/GCs_Ellipticals.csv",header=TRUE,dec=".")
+NGC_dat = read.csv(file="..//data_astro/GCs_Ellipticals.csv",header=TRUE,dec=".")
 
 # Look at the data
 head(NGC_dat)
