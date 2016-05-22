@@ -1,4 +1,4 @@
-# Chapter 1 - The Gaussian#
+# Chapter 1 - Gaussian Models#
 
 
 * Frequentist Normal linear regression in R  
