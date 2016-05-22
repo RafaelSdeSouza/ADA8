@@ -9,7 +9,7 @@
 # 1 response (y) and 1 explanatory variable (x1) with quadratic and cubic terms
 
 require(R2jags)
-source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
+source("..//Auxiliar_functions/jagsresults.R")
 require(ggplot2)
 require(mcmcplots)
 
