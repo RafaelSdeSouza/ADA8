@@ -39,6 +39,8 @@ Open the file ``/etc/apt/sources.list`` with your favorite text editor and add t
 
     deb http://cran.cnr.berkeley.edu/bin/linux/ubuntu trusty/
 
+For deeper instructions and other Linux flavours see [this page](https://cran.r-project.org/bin/linux/ubuntu/README).
+
 Then, in the command line do:
 
     sudo apt-get update
