@@ -57,7 +57,7 @@ After download is completed double click in the ``.deb`` file. This will automat
 
 **R packages**
 
-Once Rstudio is installed you will nedd few R packages. 
+Once Rstudio is installed you will need a few R packages. 
 
 These can be done in 2 ways:
 
