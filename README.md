@@ -92,6 +92,11 @@ To do so choose go to the command line and navigate to a location where you woul
 
 This should be enough to get you ready for the examples we will be working on. 
 
+If you do not have git installed you can get it typing:
+
+    sudo apt-get install git
+
+
 **Staying up to date**
 
 This is a work in progress and it will be continuously updated so erros can be fixed and complementary material can be added. 
