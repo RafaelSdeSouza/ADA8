@@ -30,6 +30,28 @@ In order to optimize the time spent in the examples and practical applications, 
 * R     	-	[https://www.r-project.org](https://www.r-project.org)
 * Rstudio 	-	[https://www.rstudio.com](https://www.rstudio.com)
 
+
+# For Linux users #
+
+If you are using Linux, make sure to add the appropriate repository before installing.  
+
+Open the file ``/etc/apt/sources.list`` with your favorite text editor and add the following line::
+
+    deb http://cran.cnr.berkeley.edu/bin/linux/ubuntu trusty/
+
+To install R and JAGS go to the command line and type::
+
+    sudo apt-get update
+    sudo apt-get install r-base
+    sudo apt-get install jags
+
+
+In order to get Rstudio choose the appropriate version of Rstudio from [this page](https://www.rstudio.com/products/rstudio/download/).
+
+After download is completed double click in the ``.deb`` file. This will automatically open Ubuntu Software Center. Click on Install.    
+
+# R packages #
+
 Once Rstudio is installed you will nedd few R packages. 
 
 These can be done in 2 ways:
