@@ -39,13 +39,17 @@ Open the file ``/etc/apt/sources.list`` with your favorite text editor and add t
 
     deb http://cran.cnr.berkeley.edu/bin/linux/ubuntu trusty/
 
-To install R and JAGS go to the command line and type::
+Then, in the command line do::
 
     sudo apt-get update
+
+Do not worry if you got a couple of error messages. This is not significant for our purpouses. The other steps should work as planned despite of them.  
+
+To install R and JAGS go to the command line and type::
+
     sudo apt-get install r-base
     sudo apt-get install jags
 
-It likely that you will get an error message after the ``update``. This is not significant for our purpouses. The other steps should work as planned despite of them.  
 
 In order to get Rstudio choose the appropriate version of Rstudio from [this page](https://www.rstudio.com/products/rstudio/download/).
 
@@ -91,8 +95,6 @@ This should be enough to get you ready for the examples we will be working on.
 
 ### Chapter 1  - Gaussian models ###
 
-The Gaussian or normal probability distribution assumes a bell-shaped distribution centred in the mean . 
-
 
 [Wikipedia](https://en.wikipedia.org/wiki/Normal_distribution)
 
@@ -101,8 +103,6 @@ The Gaussian or normal probability distribution assumes a bell-shaped distributi
 
 
 ### Chapter 2 - Bernoulli models ###
-
-The Bernoulli distribution is the probability distribution of a random variable which takes the value 1 with success probability of p and the value 0 with failure probability of q=1-p. It can be used to represent a coin toss where 1 and 0 would represent "head" and "tail" (or vice versa), respectively.
 
 
 [Wikipedia](https://en.wikipedia.org/wiki/Bernoulli_distribution)
@@ -113,7 +113,6 @@ The Bernoulli distribution is the probability distribution of a random variable 
 
 ### Chapter 3 - Count models ###
 
-Count data can take only non-negative integer values {0, 1, 2, 3, ...}, which arise from counting rather than ranking. 
 
 [Wikipedia](https://en.wikipedia.org/wiki/Count_data)
 
