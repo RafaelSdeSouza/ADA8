@@ -51,7 +51,7 @@ To install R and JAGS go to the command line and type:
     sudo apt-get install jags
 
 
-In order to get Rstudio choose the appropriate version of Rstudio from [this page](https://www.rstudio.com/products/rstudio/download/).
+In order to get Rstudio choose the appropriate version of from [this page](https://www.rstudio.com/products/rstudio/download/).
 
 After download is completed double click in the ``.deb`` file. This will automatically open Ubuntu Software Center. Click on Install.    
 
