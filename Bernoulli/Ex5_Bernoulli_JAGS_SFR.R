@@ -102,13 +102,14 @@ gdata <- data.frame(x =xx, mean = y[,"mean"],lwr1=y[,"25%"],lwr2=y[,"2.5%"],upr1
 gbin<-data.frame(x=seq(binx+min(x1),max(x1), by=binx),y=means)
 
 ggplot(logitmod,aes(x=x1,y=by))+ 
-  geom_point(colour="red",size=1,alpha=0.85,position = position_jitter (h = 0.075))+
-  geom_point(aes(x=x,y=y),size=2.75,data=gbin,colour="cyan")+
-  geom_errorbar(data=gbin,aes(x=x,y=y,ymin=y-2*means.se,ymax=y+2*means.se),alpha=0.85,
-                colour="cyan",width=0.005)+
-  geom_ribbon(data=gdata,aes(x=xx,ymin=lwr1, ymax=upr1,y=NULL), alpha=0.45, fill=c("orange2"),show.legend=FALSE) +
-  geom_ribbon(data=gdata,aes(x=xx,ymin=lwr2, ymax=upr2,y=NULL), alpha=0.35, fill = c("orange"),show.legend=FALSE) +
-  geom_line(data=gdata,aes(x=xx,y=mean),colour="gray25",linetype="dashed",size=1,show.legend=FALSE)+
-  theme_bw()+coord_cartesian(ylim=c(0,1))+xlab(expression(log~x[mol]))+ylab("Probability of star formation activity")
+  geom_point(colour="red",size=1.25,alpha=0.85,position = position_jitter (h = 0.075))+
+  geom_point(aes(x=x,y=y),size=3,data=gbin,colour="blue3")+
+  geom_errorbar(data=gbin,aes(x=x,y=y,ymin=y-2*means.se,ymax=y+2*means.se),
+                colour="blue",width=0.01)+
+#  geom_ribbon(data=gdata,aes(x=xx,ymin=lwr1, ymax=upr1,y=NULL), alpha=0.45, fill=c("orange2"),show.legend=FALSE) +
+#  geom_ribbon(data=gdata,aes(x=xx,ymin=lwr2, ymax=upr2,y=NULL), alpha=0.35, fill = c("orange"),show.legend=FALSE) +
+#  geom_line(data=gdata,aes(x=xx,y=mean),colour="gray25",linetype="dashed",size=1,show.legend=FALSE)+
+  theme_bw()+coord_cartesian(ylim=c(0,1))+xlab(expression(log~x[mol]))+ylab("Probability of star formation activity")+
+  theme(axis.title=element_text(size=25))
 
 

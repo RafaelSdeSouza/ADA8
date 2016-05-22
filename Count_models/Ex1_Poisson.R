@@ -86,7 +86,7 @@ yx <- jagsresults(x=P1, params=c('Yx'))
 gdata <- data.frame(x =xx, mean = yx[,"mean"],lwr1=yx[,"25%"],lwr2=yx[,"2.5%"],upr1=yx[,"75%"],upr2=yx[,"97.5%"])
 
 ggplot(poismod ,aes(x=x1,y=py))+ 
-  geom_point(colour="blue3",size=1,alpha=0.9)+
+  geom_point(colour="blue3",size=1.5,alpha=0.9)+
   geom_ribbon(data=gdata,aes(x=xx,ymin=lwr1, ymax=upr1,y=NULL), alpha=0.35, fill=c("orange2"),show.legend=FALSE) +
   geom_ribbon(data=gdata,aes(x=xx,ymin=lwr2, ymax=upr2,y=NULL), alpha=0.15, fill = c("orange"),show.legend=FALSE) +
   geom_line(data=gdata,aes(x=xx,y=mean),colour="gray25",linetype="dashed",size=1,show.legend=FALSE)+
