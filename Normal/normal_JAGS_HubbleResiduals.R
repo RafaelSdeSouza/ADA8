@@ -13,11 +13,12 @@
 
 
 require(R2jags)
-library(ggplot2)
+require(ggplot2)
+require(mcmcplots)
 source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
 
 # Read data
-dat<-read.csv("https://raw.githubusercontent.com/emilleishida/BMAD/master/data/HR/HR.csv",header = T)
+dat<-read.csv("../astro_data/HR.csv",header = T)
 
 nobs = nrow(dat)
 obsx1 <- dat$LogMass
@@ -88,21 +89,36 @@ inits <- function () {
 params0 <- c("beta", "sigma","Yx")
 
 # fit
-jagsfit0 <- jags(
+NORM <- jags(
   data       = jags_data,
   inits      = inits,
   parameters = params0,
   model      = textConnection(NORM_errors),
   n.chains   = 4,
-  n.iter     = 50000,
+  n.iter     = 15000,
   n.thin     = 1,
   n.burnin   = 10000)
 
-jagsresults(x=jagsfit0 , params=c("beta", "sigma"),signif=2)
+# Diagnostics 
+# Try to increase n.iter and n.burnin is to improve mixing
+
+# plot chains
+traplot(NORM,c("beta", "sigma"))
+
+# plot posteriors
+denplot(NORM,c("beta", "sigma"))
+
+# plot all coefficients
+caterplot(NORM,c("beta", "sigma"))
 
 
 
-yx <- jagsresults(x=jagsfit0, params=c('Yx'))
+# Look at output
+jagsresults(NORM, params=c("beta", "sigma"),signif=2)
+
+
+# Plot fitted values
+yx <- jagsresults(NORM, params=c('Yx'))
 gdata <- data.frame(x =xx, mean = yx[,"50%"],lwr1=yx[,"25%"],lwr2=yx[,"2.5%"],upr1=yx[,"75%"],upr2=yx[,"97.5%"])
 nmod <- data.frame(obsx1,obsy)
 
@@ -119,4 +135,5 @@ ggplot(nmod,aes(x=obsx1,y=obsy))+
   ylab(expression(mu[SN]-mu[z]))+
   xlab(expression(log~M/M['\u0298']))+
   coord_cartesian(xlim=c(8,13),ylim=c(-1,1))
+
 

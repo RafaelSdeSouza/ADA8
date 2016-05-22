@@ -10,9 +10,9 @@
 
 require(R2jags)
 require(ggplot2)
-source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
+source("..//Auxiliar_functions/jagsresults.R")
 
-SFR_dat<-read.csv("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Bernoulli/SFR.csv")
+SFR_dat<-read.csv("..//astro_data/SFR.csv")
 
 x1 <- log(SFR_dat$Xmol,10)                   
 by <- SFR_dat$SFR    
