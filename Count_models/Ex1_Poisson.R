@@ -11,7 +11,7 @@
 
 require(R2jags)
 require(ggplot2)
-source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
+source("..//Auxiliar_functions/jagsresults.R")
 
 
 set.seed(2016)                                        # set seed to replicate example
