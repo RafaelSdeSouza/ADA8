@@ -7,7 +7,7 @@
 # Example of Bayesian normal linear regression in R using JAGS 
 # including measurement errors
 # 
-# real data from Wolf et al., 2016
+# real data from Wolf et al., 2016 - http://adsabs.harvard.edu/abs/2016ApJ...821..115W
 # 1 response (y): Hubble residuals 
 # 1 explanatory variable (x1): host galaxy mass
 
