@@ -4,7 +4,7 @@
 # Partial example from Bayesian Models for Astrophysical Data 
 # by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
 #
-# Example of frequentist linear regression in R
+# Example of frequentist Bernoulli regression in R
 # synthetic data
 # 1 response (y) and 2 explanatory variables (x1,x2) with 2 quadratic terms
 

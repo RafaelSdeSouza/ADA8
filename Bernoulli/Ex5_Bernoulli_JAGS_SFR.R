@@ -4,7 +4,7 @@
 # Partial example from Bayesian Models for Astrophysical Data 
 # by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
 #
-# Example of Bayesian Logit regression in R using JAGS
+# Example of Bayesian Bernoulli regression in R using JAGS
 # real data from Biffi and Maio, 2013 - http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1309.2283
 # 
 # 1 response (y): star formation
