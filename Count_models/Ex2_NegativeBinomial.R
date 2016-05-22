@@ -15,7 +15,7 @@ library(R2jags)
 library(MASS)
 library(scales)
 require(ggplot2)
-source("https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/Auxiliar_functions/jagsresults.R")
+source("..//Auxiliar_functions/jagsresults.R")
 
 
 set.seed(141)                                              # set seed to replicate example
@@ -88,7 +88,7 @@ params <- c("beta", "theta","Yx")
 
 
 
-
+# fit
 NB2 <- jags(data = NB.data, 
             inits = inits,
             parameters = params,
