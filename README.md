@@ -51,7 +51,7 @@ In order to get Rstudio choose the appropriate version of Rstudio from [this pag
 
 After download is completed double click in the ``.deb`` file. This will automatically open Ubuntu Software Center. Click on Install.    
 
-# R packages #
+**R packages**
 
 Once Rstudio is installed you will nedd few R packages. 
 
