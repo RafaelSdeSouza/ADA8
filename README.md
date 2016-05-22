@@ -92,6 +92,18 @@ To do so choose go to the command line and navigate to a location where you woul
 
 This should be enough to get you ready for the examples we will be working on. 
 
+**Staying up to date**
+
+This is a work in progress and it will be continuously updated so erros can be fixed and complementary material can be added. 
+
+It is advisable to make sure you have the latest version before start working in you local directory. To do so, in the command line navigate to your copy of this repository and type:
+
+    git pull 
+
+Then you are certain to get all the bug fixes and improvements available.
+
+Have fun!
+
 
 ### Chapter 1  - Gaussian models ###
 
