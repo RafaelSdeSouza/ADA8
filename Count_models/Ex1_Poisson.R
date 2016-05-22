@@ -18,7 +18,7 @@ set.seed(2016)                                        # set seed to replicate ex
 nobs <- 500                                           # number of observations
 x1 <- runif(nobs)                                     # random uniform variable
 xb <- 1 + 2*x1                                        # linear predictor
-py <- rpois(nobs, exp(xb))                            # create py as adjusted random normal variate
+py <- rpois(nobs, exp(xb))                            # create py as adjusted random Poisson variate
 poismod <- data.frame(py,x1)
 
 
