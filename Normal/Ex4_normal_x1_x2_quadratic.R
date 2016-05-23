@@ -33,7 +33,7 @@ y.pred <- matrix(predict(fit, newdata = x1x2),
                  nrow = grid.lines, ncol = grid.lines)
 
 
-# fitted points for droplines to surface
+# fitted points
 fitpoints <- predict(fit)
 
 scatter3D(x1, x2, y, pch = 19, cex = 0.5, cex.lab=1.5,
