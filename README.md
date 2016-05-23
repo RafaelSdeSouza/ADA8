@@ -117,7 +117,7 @@ Have fun!
 
 [Wikipedia](https://en.wikipedia.org/wiki/Normal_distribution)
 
-[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/eebf6e57982f8817ec678128967580ccfdae1f67/Normal)
+[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Normal)
 
 
 
@@ -126,7 +126,7 @@ Have fun!
 
 [Wikipedia](https://en.wikipedia.org/wiki/Bernoulli_distribution)
 
-[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/eebf6e57982f8817ec678128967580ccfdae1f67/Bernoulli)
+[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Bernoulli)
 
 
 
@@ -135,7 +135,7 @@ Have fun!
 
 [Wikipedia](https://en.wikipedia.org/wiki/Count_data)
 
-[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/eebf6e57982f8817ec678128967580ccfdae1f67/Count_models)
+[Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Count_models)
 
 
 
