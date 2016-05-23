@@ -4,7 +4,7 @@
 # Partial example from Bayesian Models for Astrophysical Data 
 # by Hilbe, de Souza & Ishida, 2016, Cambridge Univ. Press
 #
-# Example of Bernoulli regression in R using JAGS
+# Example of Bernoulli regression in R
 # synthetic data
 # 1 response (y) and 1 explanatory variable (x1) with quadratic term
 
