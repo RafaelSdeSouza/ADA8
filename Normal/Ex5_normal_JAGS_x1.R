@@ -14,7 +14,7 @@ require(ggplot2)
 
 set.seed(1056)                 # set seed to replicate example
 nobs= 500                      # number of obs in model 
-x1 <- rnorm(nobs,5,2)          # random uniform variable
+x1 <- runif(nobs,5,2)          # random uniform variable
 
 xb <- 2 + 3*x1                 # linear predictor
 y <- rnorm(nobs, xb, sd=2)     # create y as adjusted random normal variate
@@ -70,7 +70,9 @@ inits <- function () {
 }
 
 # define parameters
-params <- c("beta", "sigma","Yx")
+#params <- c("beta", "sigma","Yx")
+params <- c("beta", "sigma")
+
 
 jagsfit <- jags(
            data       = jags_data,
@@ -81,6 +83,10 @@ jagsfit <- jags(
            n.iter     = 5000,
            n.thin     = 1,
            n.burnin   = 2500)
+
+
+
+
 
 
 #print(jagsfit,justify = "left", digits=2)

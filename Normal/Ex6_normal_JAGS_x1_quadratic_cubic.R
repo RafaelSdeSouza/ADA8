@@ -73,6 +73,9 @@ inits <- function () {
 # define parameters
 params <- c("beta", "sigma","Yx")
 
+#params <- c("beta", "sigma")
+
+
 # fit
 jagsfit <- jags(
   data       = jags_data,
