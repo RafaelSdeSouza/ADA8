@@ -138,7 +138,9 @@ Have fun!
 [Tutorial Examples](https://github.com/RafaelSdeSouza/ADA8/tree/master/Count_models)
 
 
+### Presentation Slides ###
 
+The slides used in this tutorial are available [here](https://github.com/RafaelSdeSouza/ADA8/blob/master/Slides/ada-tutorial.pdf).
 
 
 ### References ###
