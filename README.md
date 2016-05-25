@@ -1,4 +1,4 @@
-<img src="images/COIN.png" width="800" align="right">
+<img src="https://raw.githubusercontent.com/RafaelSdeSouza/ADA8/master/images/COIN.png" width="800" align="right">
 
 # Tutorial on Bayesian Modeling #
 ## [ADA8 Summer School](http://ada8.cosmostat.org) - May 23rd, 2016 - Chania, Greece ##
