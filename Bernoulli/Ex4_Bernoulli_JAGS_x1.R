@@ -77,9 +77,9 @@ jagsfit<- jags(data       = logit_data,
                model      = textConnection(LOGIT),
                n.thin     = 1,
                n.chains   = 3,
-               n.burnin   = 3000,
-               n.iter     = 5000)
-
+               n.burnin   = 5000,
+               n.iter     = 10000)
+traplot(jagsfit,c("beta"))
 
 # check results
 print(jagsfit,intervals=c(0.025, 0.975),justify = "left", digits=2)
@@ -110,4 +110,4 @@ geom_ribbon(data=gdata,aes(x=xx,ymin=lwr2, ymax=upr2,y=NULL), alpha=0.35, fill =
 geom_line(data=gdata,aes(x=xx,y=mean),colour="gray25",linetype="dashed",size=1,show.legend=FALSE)+
 theme_bw() 
 
-  
+

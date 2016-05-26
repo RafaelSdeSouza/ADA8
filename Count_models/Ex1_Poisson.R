@@ -16,7 +16,7 @@ source("..//Auxiliar_functions/jagsresults.R")
 
 set.seed(2016)                                        # set seed to replicate example
 nobs <- 500                                           # number of observations
-x1 <- runif(nobs)                                     # random uniform variable
+x1 <- rnorm(nobs,0,2)                                     # random uniform variable
 xb <- 1 + 2*x1                                        # linear predictor
 py <- rpois(nobs, exp(xb))                            # create py as adjusted random Poisson variate
 poismod <- data.frame(py,x1)

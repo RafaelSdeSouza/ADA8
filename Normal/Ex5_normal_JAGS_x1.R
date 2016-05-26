@@ -85,9 +85,11 @@ jagsfit <- jags(
            n.burnin   = 2500)
 
 
+require(mcmcplots)
 
+traplot(jagsfit)
 
-
+denplot(jagsfit)
 
 #print(jagsfit,justify = "left", digits=2)
 
