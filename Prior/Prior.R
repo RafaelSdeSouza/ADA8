@@ -20,12 +20,19 @@ abline(v=0.75,lty=3,lwd=2)
 
 prior = c(76,26)
 # New observation
-New_obs <- 20
 # 50% are spirals
-
 # spirals  = 10
 # others = 10
 
 data <- c(10,10)
 
 triplot(prior,data,where="topright")
+
+
+# Larger data 5000
+
+data <- c(2500,2500)
+
+triplot(prior,data,where="topright")
+
+
