@@ -12,13 +12,13 @@
 set.seed(1056)                    # set seed to replicate example
 nobs= 150                         # number of obs in model 
 x1 <- runif(nobs,0,5)             # random uniform variable
-mu <- 1 + 5 * x1 - 0.75 * x1 ^ 2  # linear predictor, xb
+mu <- 1 + 5 * x1 - 0.75 * x1 ^ 3  # linear predictor, xb
 y <- rnorm(nobs, mu, sd=0.5)      # create y as adjusted random normal variate 
 
 plot(x1,y)                        # Visualize data
  
 
-fit <- lm(y ~ x1+I(x1^2))          # Normal Fit 
+fit <- lm(y ~ x1+I(x1^3))          # Normal Fit 
 summary(fit) 
 
 xx <- seq(0,5,length=200)

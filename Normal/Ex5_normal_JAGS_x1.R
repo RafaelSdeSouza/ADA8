@@ -14,11 +14,12 @@ require(ggplot2)
 
 set.seed(1056)                 # set seed to replicate example
 nobs= 500                      # number of obs in model 
-x1 <- runif(nobs,5,2)          # random uniform variable
+x1 <- runif(nobs,2,5)          # random uniform variable
 
 xb <- 2 + 3*x1                 # linear predictor
 y <- rnorm(nobs, xb, sd=2)     # create y as adjusted random normal variate
 
+plot(x1,y)
 
 # Prepare data for prediction 
 M=500
@@ -71,7 +72,7 @@ inits <- function () {
 
 # define parameters
 #params <- c("beta", "sigma","Yx")
-params <- c("beta", "sigma")
+params <- c("beta", "sigma","Yx")
 
 
 jagsfit <- jags(
@@ -104,7 +105,7 @@ gdata <- data.frame(x =xx, mean = yx[,"mean"],lwr1=yx[,"25%"],lwr2=yx[,"2.5%"],u
 
 ggplot(normdata,aes(x=x1,y=y))+ geom_point(colour="#de2d26",size=1,alpha=0.35)+
   geom_point(size=1.5,colour="red3")+
-  geom_ribbon(data=gdata,aes(x=xx,ymin=lwr1, ymax=upr1,y=NULL), alpha=0.45, fill=c("orange3"),show.legend=FALSE) +
+  geom_ribbon(data=gdata,aes(x=xx,ymin=lwr1, ymax=upr1,y=NULL), alpha=0.95, fill=c("orange3"),show.legend=FALSE) +
   geom_ribbon(data=gdata,aes(x=xx,ymin=lwr2, ymax=upr2,y=NULL), alpha=0.35, fill = c("orange"),show.legend=FALSE) +
   geom_line(data=gdata,aes(x=xx,y=mean),colour="gray25",linetype="dashed",size=1,show.legend=FALSE)+
   theme_bw()
